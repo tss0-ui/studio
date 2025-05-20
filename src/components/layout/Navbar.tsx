@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { SiteLogo } from './SiteLogo';
 import { navigationLinks, type NavItem } from '@/constants/navigation';
 import { cn } from '@/lib/utils';
@@ -65,6 +65,9 @@ export function Navbar() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Main Menu</SheetTitle>
+              </SheetHeader>
               <div className="mb-8 flex justify-between items-center">
                 <SiteLogo />
                  <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)} className="md:hidden">

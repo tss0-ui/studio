@@ -13,8 +13,9 @@ import {
   Gift, 
   MoonStar,
   Sparkles,
-  Wine // Added for Bespoke Companionship
-  // Removed Palette, Landmark
+  Wine,
+  Heart, // For My Values
+  Diamond // For Luxury Escort Services & Why Choose Nikki
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -34,7 +35,7 @@ const physicalAttributes = [
 
 const whyChooseNikkiFeatures = [
   {
-    icon: <Gem className="h-10 w-10 text-primary" />,
+    icon: <Diamond className="h-10 w-10 text-primary" />, // Changed from Gem
     title: 'Exclusivity Meets Authenticity',
     description: 'You’re not booking from a list — you’re connecting with a real woman. I\'m selective with whom I spend time, which means when we meet, you\'re getting my full attention. Our chemistry? Unrushed. Our vibe? Real.',
   },
@@ -62,7 +63,7 @@ const whyChooseNikkiFeatures = [
 
 const whatIOfferItems = [
   {
-    icon: <Wine className="h-8 w-8 text-primary" />, // Changed from Palette
+    icon: <Wine className="h-8 w-8 text-primary" />,
     title: 'Bespoke Companionship',
     description: 'From candlelit dinners in downtown St. Pete to best kept secrets in the bedroom. I offer companionship designed to reflect your mood and elevate your moment.',
   },
@@ -101,9 +102,12 @@ export default function HomePage() {
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
             Welcome to Nikki by Night — the private world of Miss. Nikki, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
           </p>
+          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
+            Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
+          </p>
         
           {/* Physical Attributes Section */}
-          <Card className="shadow-xl my-8 text-left bg-card/80 backdrop-blur-sm border-border/50">
+          <Card className="shadow-xl my-12 text-left bg-card/80 backdrop-blur-sm border-border/50">
             <CardHeader>
               <CardTitle className="text-2xl text-center text-primary">Physical Attributes</CardTitle>
             </CardHeader>
@@ -136,6 +140,7 @@ export default function HomePage() {
       {/* My Mission Section */}
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <Heart className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Updated icon */}
           <h2 className="text-3xl font-bold text-foreground tracking-tight">My Mission</h2>
           <p className="mt-4 text-2xl text-primary font-semibold italic">
             To turn your time into timelessness.
@@ -150,6 +155,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <Gem className="mx-auto h-12 w-12 text-primary mb-6" />
             <h2 className="text-3xl font-bold text-foreground tracking-tight">Why Choose Nikki?</h2>
           </div>
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
@@ -170,9 +176,10 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <Sparkles className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Changed icon for variety */}
             <h2 className="text-3xl font-bold text-foreground tracking-tight">What I Offer</h2>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-2"> {/* Adjusted to md:grid-cols-2 since there are 2 items */}
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
             {whatIOfferItems.map((item) => (
               <Card key={item.title} className="text-center shadow-lg hover:shadow-primary/30 transition-shadow_transform hover:-translate-y-1 bg-card flex flex-col">
                 <CardHeader className="items-center">
@@ -190,10 +197,27 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* My Values Section */}
+      {/* Luxury Escort Services by Nikki Section */}
       <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
+          <Diamond className="mx-auto h-12 w-12 text-primary mb-6" />
+          <h2 className="text-3xl font-bold text-foreground tracking-tight mb-6">
+            Luxury Escort Services by Nikki
+          </h2>
+          <p className="mt-4 text-lg text-muted-foreground">
+            When you choose Nikki, you are choosing an elite escort experience that is second to none. Looking for a private, intimate experience? Nikki delivers a range of luxury escort services that ensure every moment with her is unforgettable. Her services are designed to suit your preferences and schedule.
+          </p>
+          <p className="mt-4 text-lg text-muted-foreground">
+            For more information, check out <Link href="/services" className="text-primary hover:underline">my rates and services page</Link>.
+          </p>
+        </div>
+      </section>
+
+      {/* My Values Section */}
+      <section className="py-16 md:py-24 bg-muted"> {/* Alternating background */}
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
+            <Heart className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Consistent icon with My Mission */}
             <h2 className="text-3xl font-bold text-foreground tracking-tight">My Values</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -211,18 +235,18 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-primary text-primary-foreground">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
+            <CalendarCog className="mx-auto h-12 w-12 mb-6" />
             <h2 className="text-3xl font-bold tracking-tight">Booking with Nikki</h2>
             <p className="mt-4 text-lg opacity-90">
               My process is easy, efficient, and designed to keep things effortless for you:
             </p>
           </div>
-          <div className="space-y-8">
-            {bookingSteps.map((item, index) => (
-                <div key={index} className="p-6 rounded-lg bg-background/10 shadow-md backdrop-blur-sm">
-                    <h3 className="text-xl font-semibold text-primary-foreground mb-1">{item.title}</h3>
-                    <p className="opacity-90">{item.description}</p>
-                </div>
-            ))}
+          <div className="space-y-6 text-center text-lg opacity-90">
+              <p>Head over to the "Book Me" page to select your date, time, and desired experience.</p>
+              <p>My system will check your requested time slot.</p>
+              <p>Upon approval, your reservation will be secured through a private Stripe checkout link or crypto wallet — your choice.</p>
+              <p>Your date is locked into my calendar. You'll receive an email confirmation, with optional SMS updates if requested.</p>
+              <p>Enjoy the Experience — our time will be polished, playful, and personal.</p>
           </div>
            <div className="mt-12 text-center">
             <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground shadow-xl hover:bg-accent/90 transition-colors">
@@ -255,3 +279,5 @@ export default function HomePage() {
     </MainLayout>
   );
 }
+
+    

@@ -15,16 +15,16 @@ export default function ContactPage() {
             Get In Touch
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Have questions or special requests? We're here to assist you. Reach out through the form below or via our contact details.
+            Have questions or special requests? I'm here to assist you. Reach out through the form below or via my contact details.
           </p>
         </div>
 
         <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <Card className="shadow-xl">
             <CardHeader>
-              <CardTitle className="text-2xl">Send Us a Message</CardTitle>
+              <CardTitle className="text-2xl">Send Me a Message</CardTitle>
               <CardDescription>
-                Fill out the form and we'll respond as soon as possible.
+                Fill out the form and I'll respond as soon as possible.
               </CardDescription>
             </CardHeader>
             <CardContent>
@@ -35,9 +35,9 @@ export default function ContactPage() {
           <div className="space-y-8">
             <Card className="shadow-xl">
               <CardHeader>
-                <CardTitle className="text-2xl">Contact Information</CardTitle>
+                <CardTitle className="text-2xl">My Contact Information</CardTitle>
                 <CardDescription>
-                  Other ways to reach Nikki By Night.
+                  Other ways to reach me.
                 </CardDescription>
               </CardHeader>
               <CardContent className="space-y-4">
@@ -64,7 +64,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold">Location</h3>
                     <p className="text-muted-foreground">
-                      Operating in select upscale locations. Specifics provided upon confirmed booking for privacy.
+                      I operate in select upscale locations throughout Pinellas County, FL. Specifics are provided upon confirmed booking for your privacy and my discretion.
                     </p>
                   </div>
                 </div>
@@ -72,7 +72,7 @@ export default function ContactPage() {
             </Card>
              <Card className="shadow-xl">
               <CardHeader>
-                <CardTitle className="text-2xl">Business Hours</CardTitle>
+                <CardTitle className="text-2xl">My Availability</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground">

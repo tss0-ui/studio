@@ -14,7 +14,7 @@ export default function BookingPage() {
             Book Your Experience
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Schedule your appointment with ease. We ensure utmost privacy and discretion.
+            Schedule your appointment with ease. I ensure utmost privacy and discretion.
           </p>
         </div>
 
@@ -23,7 +23,7 @@ export default function BookingPage() {
             <CardTitle className="text-2xl">Appointment Details</CardTitle>
             <CardDescription>
               Please fill out the form below to request your appointment. 
-              Our team will contact you to confirm availability.
+              I will contact you to confirm availability.
             </CardDescription>
           </CardHeader>
           <CardContent>

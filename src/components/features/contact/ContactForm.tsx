@@ -44,7 +44,7 @@ export function ContactForm() {
     console.log(data);
     toast({
       title: "Message Sent!",
-      description: `Thank you, ${data.name}. We've received your message and will get back to you soon.`,
+      description: `Thank you, ${data.name}. I've received your message and will get back to you soon.`,
     });
     form.reset();
   }
@@ -85,7 +85,7 @@ export function ContactForm() {
             <FormItem>
               <FormLabel>Subject</FormLabel>
               <FormControl>
-                <Input placeholder="Regarding your services" {...field} />
+                <Input placeholder="Regarding my services" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

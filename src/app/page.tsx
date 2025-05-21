@@ -10,19 +10,19 @@ const features = [
   {
     icon: <Gift className="h-8 w-8 text-primary" />,
     title: 'Exclusive Packages',
-    description: 'Tailored experiences designed for ultimate luxury and discretion.',
+    description: 'Tailored experiences I design for ultimate luxury and discretion.',
     link: '/services',
   },
   {
     icon: <CalendarCheck className="h-8 w-8 text-primary" />,
     title: 'Seamless Booking',
-    description: 'Easy and private appointment scheduling integrated with Google Calendar.',
+    description: 'Easy and private appointment scheduling for your convenience.',
     link: '/booking',
   },
   {
     icon: <DollarSign className="h-8 w-8 text-primary" />,
     title: 'Flexible Payments',
-    description: 'Secure transactions via Stripe and select cryptocurrencies for your convenience.',
+    description: 'Secure transactions via Stripe and select cryptocurrencies.',
     link: '/payments',
   },
 ];
@@ -37,17 +37,17 @@ export default function HomePage() {
         </div>
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-            Experience <span className="text-primary">Nikki By Night</span>
+            Experience <span className="text-primary">Me, Nikki By Night</span>
           </h1>
           <p className="mt-6 max-w-2xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            Indulge in unparalleled sophistication and bespoke services. Your exclusive escape awaits.
+            Indulge in my unparalleled sophistication and bespoke escort services. Your exclusive escape awaits.
           </p>
           <div className="mt-10 flex justify-center gap-4">
             <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
               <Link href="/booking">Book an Appointment <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
             <Button asChild size="lg" variant="outline" className="shadow-lg hover:shadow-xl transition-shadow">
-              <Link href="/services">Explore Services</Link>
+              <Link href="/services">Explore My Services</Link>
             </Button>
           </div>
         </div>
@@ -57,9 +57,9 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
-            <h2 className="text-3xl font-bold text-foreground">Why Choose Nikki By Night?</h2>
+            <h2 className="text-3xl font-bold text-foreground">Why Choose Me?</h2>
             <p className="mt-4 text-lg text-muted-foreground">
-              We offer a unique blend of luxury, privacy, and personalized attention.
+              I offer a unique blend of luxury, privacy, and personalized attention.
             </p>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
@@ -90,10 +90,10 @@ export default function HomePage() {
             <div>
               <h2 className="text-3xl font-bold text-foreground">Meet Nikki</h2>
               <p className="mt-4 text-lg text-muted-foreground">
-                With years of experience in providing top-tier personal services, Nikki ensures every client interaction is memorable, discreet, and tailored to individual desires.
+                With years of experience providing top-tier personal escort services in Pinellas County, FL, I ensure every client interaction is memorable, discreet, and tailored to your individual desires.
               </p>
               <p className="mt-4 text-lg text-muted-foreground">
-                Nikki By Night is more than a service; it's an experience curated with passion and professionalism.
+                What I offer is more than a service; it's an experience I curate with passion and professionalism.
               </p>
               <Button asChild className="mt-8 shadow-md" size="lg">
                 <Link href="/contact">Get in Touch</Link>
@@ -106,7 +106,7 @@ export default function HomePage() {
                 width={600}
                 height={700}
                 className="object-cover aspect-[6/7]"
-                data-ai-hint="elegant woman portrait"
+                data-ai-hint="alluring woman portrait"
               />
             </div>
           </div>
@@ -119,7 +119,7 @@ export default function HomePage() {
           <Sparkles className="mx-auto h-12 w-12 mb-4" />
           <h2 className="text-3xl font-bold">Ready for an Unforgettable Experience?</h2>
           <p className="mt-4 text-lg opacity-90">
-            Secure your private consultation or booking with Nikki By Night. Discretion and satisfaction guaranteed.
+            Secure your private consultation or booking with me. Discretion and satisfaction guaranteed.
           </p>
           <Button asChild size="lg" variant="secondary" className="mt-8 shadow-xl hover:bg-accent hover:text-accent-foreground transition-colors">
             <Link href="/booking">Book Your Appointment Now</Link>

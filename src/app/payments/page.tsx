@@ -29,7 +29,7 @@ export default function PaymentsPage() {
               </div>
             </CardHeader>
             <CardContent>
-              <p>We prioritize your security and privacy in all transactions. Our systems use industry-standard encryption and security protocols.</p>
+              <p>I prioritize your security and privacy in all transactions. My systems use industry-standard encryption and security protocols.</p>
             </CardContent>
           </Card>
 
@@ -39,12 +39,12 @@ export default function PaymentsPage() {
               <div>
                 <CardTitle className="text-xl">Stripe Payments</CardTitle>
                 <CardDescription>
-                  We accept all major credit and debit cards through Stripe, a leading global payment processor.
+                  I accept all major credit and debit cards through Stripe, a leading global payment processor.
                 </CardDescription>
               </div>
             </CardHeader>
             <CardContent>
-              <p>Stripe provides a seamless and secure way to pay using your preferred card. Your card details are never stored on our servers.</p>
+              <p>Stripe provides a seamless and secure way to pay using your preferred card. Your card details are never stored on my servers.</p>
               {/* In a real app, you might embed a Stripe payment element or link to a checkout page */}
             </CardContent>
           </Card>
@@ -55,19 +55,19 @@ export default function PaymentsPage() {
               <div>
                 <CardTitle className="text-xl">Cryptocurrency Payments</CardTitle>
                 <CardDescription>
-                  For enhanced privacy, we also accept payments in select cryptocurrencies.
+                  For enhanced privacy, I also accept payments in select cryptocurrencies.
                 </CardDescription>
               </div>
             </CardHeader>
             <CardContent>
-              <p>We currently support payments in Bitcoin (BTC), Ethereum (ETH), and Monero (XMR). Please contact us directly if you wish to pay using cryptocurrency to receive wallet details and instructions.</p>
+              <p>I currently support payments in Bitcoin (BTC), Ethereum (ETH), and Monero (XMR). Please contact me directly if you wish to pay using cryptocurrency to receive my wallet details and instructions.</p>
               <p className="mt-2 text-sm text-muted-foreground">Note: Cryptocurrency transactions are final and non-refundable. Ensure you send the correct amount to the provided address.</p>
             </CardContent>
           </Card>
         </div>
         
         <p className="mt-12 text-center text-muted-foreground">
-          For any payment-related queries, please don't hesitate to <a href="/contact" className="text-primary hover:underline">contact us</a>.
+          For any payment-related queries, please don't hesitate to <Link href="/contact" className="text-primary hover:underline">contact me</Link>.
         </p>
       </div>
     </MainLayout>

@@ -18,7 +18,7 @@ export const services: Service[] = [
     price: '$500',
     duration: '2 hours',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'luxury spa relaxation',
+    aiHint: 'sensual ambiance candlelit',
     features: ['Personalized consultation', 'Premium ambiance', 'Refreshments included', 'Extended duration option']
   },
   {
@@ -28,7 +28,7 @@ export const services: Service[] = [
     price: '$300',
     duration: '1 hour',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'elegant evening lifestyle',
+    aiHint: 'intimate encounter silhouette',
     features: ['Focused session', 'Choice of theme', 'Discreet & private']
   },
   {
@@ -38,7 +38,7 @@ export const services: Service[] = [
     price: '$800',
     duration: '4 hours',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'city nightlife luxury',
+    aiHint: 'opulent hotel suite night',
     features: ['All-inclusive', 'Multiple activities', 'Gourmet snacks & drinks', 'Utmost privacy']
   },
   {
@@ -48,7 +48,7 @@ export const services: Service[] = [
     price: '$200',
     duration: '1 hour (Virtual)',
     image: 'https://placehold.co/600x400.png',
-    aiHint: 'woman video call',
+    aiHint: 'flirty video chat',
     features: ['Secure video platform', 'Personalized interaction', 'Flexible scheduling']
   },
 ];

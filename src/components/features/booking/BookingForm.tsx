@@ -85,7 +85,7 @@ export function BookingForm() {
           <p>Thank you, {data.name}. Your request for {selectedService?.name || 'a service'} has been received.</p>
           <p>Date: {format(data.date, "PPP")}</p>
           <p>Time: {data.time}</p>
-          <p>We will contact you shortly to confirm your appointment.</p>
+          <p>I will contact you shortly to confirm your appointment.</p>
         </div>
       ),
       duration: 8000,
@@ -114,7 +114,7 @@ export function BookingForm() {
               <Select onValueChange={handleServiceChange} defaultValue={field.value}>
                 <FormControl>
                   <SelectTrigger>
-                    <SelectValue placeholder="Select a service" />
+                    <SelectValue placeholder="Select a service I offer" />
                   </SelectTrigger>
                 </FormControl>
                 <SelectContent>
@@ -253,7 +253,7 @@ export function BookingForm() {
                 <Input placeholder="Any special requests or preferences?" {...field} />
               </FormControl>
               <FormDescription>
-                Let us know if you have any specific requirements.
+                Let me know if you have any specific requirements.
               </FormDescription>
               <FormMessage />
             </FormItem>

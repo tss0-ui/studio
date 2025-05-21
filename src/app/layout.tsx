@@ -5,8 +5,8 @@ import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
 
 export const metadata: Metadata = {
-  title: 'Nikki By Night - Luxury & Sophistication',
-  description: 'Experience unparalleled service with Nikki By Night. Book your exclusive appointment today.',
+  title: 'Nikki By Night - Your Premier Escort Experience',
+  description: 'Indulge in an exclusive and sophisticated escort experience with me, Nikki. Book your private appointment in Pinellas County, FL.',
 };
 
 export default function RootLayout({

@@ -14,6 +14,7 @@ export default {
       fontFamily: {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         heading: ["var(--font-montserrat)", ...fontFamily.sans],
+        cursive: ["var(--font-great-vibes)", "cursive"],
       },
   		colors: {
   			background: 'hsl(var(--background))',

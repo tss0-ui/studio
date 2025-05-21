@@ -56,7 +56,7 @@ const whyChooseNikkiFeatures = [
     description: 'Whether you\'re high-profile or simply value your privacy, I ensure that every step of our interaction — from communication to rendezvous — remains strictly confidential. My discretion is absolute.',
   },
   {
-    icon: <WandSparkles className="h-10 w-10 text-primary" />, // Changed from Sparkle to WandSparkles for variety
+    icon: <WandSparkles className="h-10 w-10 text-primary" />,
     title: 'Tailored, Not Templated',
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
@@ -95,21 +95,57 @@ const myValuesItems = [
 export default function HomePage() {
   return (
     <MainLayout>
-      {/* Hero Section - About Nikki */}
-      <section className="relative py-20 md:py-32 bg-gradient-to-br from-background to-muted/50">
-        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center relative z-10">
-          <h1 className="text-sm font-bold tracking-widest text-primary uppercase mb-4">About Nikki</h1>
+      {/* New Hero Section */}
+      <section className="relative h-screen flex flex-col items-center justify-center text-white overflow-hidden">
+        <Image
+          src="https://placehold.co/1920x1080.png"
+          alt="Nikki by Night background"
+          fill
+          className="object-cover z-0"
+          data-ai-hint="sensual woman couch"
+          priority
+        />
+        <div className="absolute inset-0 bg-black/70 z-10"></div>
+
+        <div className="relative z-20 text-center p-4 flex flex-col items-center justify-center">
+          <h1 className="text-7xl sm:text-8xl md:text-9xl lg:text-[120px] font-cursive text-white drop-shadow-lg">
+            Nikki
+          </h1>
+          <p className="text-base sm:text-lg md:text-xl text-neutral-200 my-1 md:my-2 drop-shadow-sm">by</p>
+          <h2
+            className="text-6xl sm:text-7xl md:text-8xl lg:text-[150px] font-extrabold uppercase text-white tracking-wider font-sans"
+            style={{
+              textShadow: '0 0 5px rgba(255,255,255,0.4), 0 0 10px rgba(255,255,255,0.3), 0 0 20px rgba(0,0,0,0.5)',
+            }}
+          >
+            NIGHT
+          </h2>
+
+          <div className="mt-6 md:mt-10">
+            <p className="text-sm sm:text-base md:text-lg uppercase text-neutral-300 tracking-wider drop-shadow-sm">
+              Luxury Professional Companion
+            </p>
+            <p className="mt-1 text-sm sm:text-base md:text-lg uppercase tracking-wider drop-shadow-sm">
+              <span className="text-neutral-300">Pinellas </span>
+              <span className="text-primary font-semibold">Incall/Outcall</span>
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* About Nikki / Welcome Section (Previously the first hero) */}
+      <section className="py-16 md:py-24 bg-background">
+        <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl mb-6">
             Intimate. Intentional. <span className="text-primary">Unforgettable.</span>
           </p>
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
             Welcome to Nikki by Night — the private world of Miss. Nikki, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
           </p>
-           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
+          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
             Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
           </p>
         
-          {/* Physical Attributes Section */}
           <Card className="shadow-xl my-12 text-left bg-card/80 backdrop-blur-sm border-border/50">
             <CardHeader className="flex flex-row items-center justify-center gap-2 text-primary">
               <UserCircle className="h-6 w-6" />
@@ -221,7 +257,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <KeyRound className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Changed icon for variety */}
+            <KeyRound className="mx-auto h-12 w-12 text-primary mb-6" />
             <h2 className="text-3xl font-bold text-foreground tracking-tight">My Values</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

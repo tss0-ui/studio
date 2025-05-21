@@ -10,15 +10,15 @@ import {
   Gem, 
   Heart, 
   KeyRound, 
-  Lightbulb,
+  Lightbulb, // Corrected: Was LightBulb, changed to Lightbulb
   MoonStar,
   ShieldCheck, 
   UserCircle,
   WandSparkles, 
   Wine,
   CalendarCog, 
-  CalendarDays,
-  Info
+  CalendarDays, // Added CalendarDays based on usage
+  Info // Added Info based on usage
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -59,12 +59,12 @@ const whyChooseNikkiFeatures = [
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
   {
-    icon: <CalendarDays className="h-10 w-10 text-primary" />,
+    icon: <CalendarDays className="h-10 w-10 text-primary" />, // Using CalendarDays
     title: 'Smart Sync, Seamless Planning',
     description: 'My calendar is integrated with real-time availability. Once your preferred time is confirmed, everything is scheduled smoothly — including any travel or event prep we may need. Efficiency meets elegance.',
   },
   {
-    icon: <Heart className="h-10 w-10 text-primary" />,
+    icon: <Heart className="h-10 w-10 text-primary" />, // Using Heart
     title: 'Personal Touches',
     description: 'Expect more than just a pretty face. From thoughtful texts to surprise details, I love weaving unexpected delights into our interactions. You’ll feel seen, appreciated, and indulged.',
   },
@@ -94,21 +94,8 @@ export default function HomePage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="relative w-[1425px] h-[755px] bg-black mx-auto">
-        <div className="absolute inset-0 opacity-25">
-          <Image
-            src="/images/hero-overlay-image.jpg" 
-            alt="Nikki relaxing on a couch"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
-        </div>
-        <div
-          className="absolute font-neonderthaw text-white opacity-50 tracking-[2px] flex items-center justify-center left-[3.5px] top-[77px] w-[589px] h-[86px] text-[72px] leading-[86px]"
-        >
-          Nikki
-        </div>
+      <section className="w-[1425px] h-[755px] bg-black mx-auto">
+        {/* This section is intentionally left blank to be a black canvas */}
       </section>
 
       {/* About Nikki / Welcome Section */}

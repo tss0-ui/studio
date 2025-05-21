@@ -34,10 +34,10 @@ export default function ServicesPage() {
         <div className="text-center mb-12">
           <ListChecks className="mx-auto h-12 w-12 text-primary mb-4" />
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            My Exquisite Services
+            Service Packages
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Discover a range of experiences I've meticulously crafted for your pleasure and privacy.
+            Choose the duration of your Nikki vacation.
           </p>
         </div>
         <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 mb-16">

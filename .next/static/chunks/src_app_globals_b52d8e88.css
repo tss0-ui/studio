@@ -1389,6 +1389,10 @@ main {
   border-color: hsl(var(--border));
 }
 
+.border-border\/30 {
+  border-color: hsl(var(--border) / .3);
+}
+
 .border-l-transparent {
   border-left-color: #0000;
 }
@@ -1665,6 +1669,10 @@ main {
 
 .pl-1 {
   padding-left: .25rem;
+}
+
+.pt-8 {
+  padding-top: 2rem;
 }
 
 .text-left {
@@ -3047,6 +3055,10 @@ main {
 }
 
 @media (width >= 768px) {
+  .md\:mt-0 {
+    margin-top: 0;
+  }
+
   .md\:block {
     display: block;
   }
@@ -3083,6 +3095,10 @@ main {
     flex-direction: row;
   }
 
+  .md\:items-start {
+    align-items: flex-start;
+  }
+
   .md\:justify-start {
     justify-content: flex-start;
   }
@@ -3111,6 +3127,10 @@ main {
   .md\:py-32 {
     padding-top: 8rem;
     padding-bottom: 8rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 
   .md\:text-6xl {

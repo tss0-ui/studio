@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 import { Menu, X } from 'lucide-react';
 import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
-import { Sheet, SheetContent, SheetHeader, SheetTitle } from '@/components/ui/sheet';
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from '@/components/ui/sheet';
 import { SiteLogo } from './SiteLogo';
 import { navigationLinks, type NavItem } from '@/constants/navigation';
 import { cn } from '@/lib/utils';
@@ -29,7 +29,7 @@ export function Navbar() {
             asChild 
             size={inSheet ? "lg" : "default"} 
             className={cn(
-              inSheet ? "w-full mt-4" : "shadow-md hover:shadow-primary/50 transition-shadow", // Removed ml-4
+              inSheet ? "w-full mt-4" : "shadow-md hover:shadow-primary/50 transition-shadow",
             )}
           >
             <Link href={item.href} onClick={() => inSheet && setIsSheetOpen(false)}>
@@ -65,7 +65,7 @@ export function Navbar() {
              <div className="h-6 w-12 animate-pulse rounded-md bg-muted-foreground/20"></div>
              <div className="h-6 w-12 animate-pulse rounded-md bg-muted-foreground/20"></div>
              <div className="h-6 w-12 animate-pulse rounded-md bg-muted-foreground/20"></div>
-             <div className="h-9 w-24 animate-pulse rounded-md bg-primary/20"></div> {/* Adjusted for consistent spacing */}
+             <div className="h-9 w-24 animate-pulse rounded-md bg-primary/20"></div>
           </div>
         </div>
       </header>
@@ -76,7 +76,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <SiteLogo />
-        <nav className="hidden items-center space-x-6 md:flex"> {/* Added space-x-6 */}
+        <nav className="hidden items-center space-x-6 md:flex">
           <NavLinks />
         </nav>
         <div className="md:hidden">

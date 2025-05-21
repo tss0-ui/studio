@@ -7,17 +7,30 @@ import Link from 'next/link';
 import { 
   ArrowRight, 
   Gem, 
-  KeyRound, // For Discretion (🤫)
-  WandSparkles, // For Tailored (✨)
-  CalendarCog, // For Smart Sync (📅)
-  Gift, // For Personal Touches (💌)
-  Palette, // For Bespoke Companionship (💃)
-  Landmark, // For Private Events (🛥️)
-  MoonStar, // For Intimate Evenings (🖤)
-  Sparkles, // For "Let's Make Magic"
-  Heart, // For Values, if needed, or general use
-  ShieldCheck // Alternative for Discretion
+  KeyRound, 
+  WandSparkles, 
+  CalendarCog, 
+  Gift, 
+  MoonStar,
+  Sparkles,
+  Wine // Added for Bespoke Companionship
+  // Removed Palette, Landmark
 } from 'lucide-react';
+
+const physicalAttributes = [
+  { label: "Gender", value: "Female" },
+  { label: "Age", value: "31" },
+  { label: "Location", value: "Pinellas County, Florida" },
+  { label: "Eyes", value: "Blue" },
+  { label: "Hair", value: "Blonde, Medium Length" },
+  { label: "Height", value: "170 cm / 5'7\"" },
+  { label: "Bust", value: "Natural C" },
+  { label: "Pubic Hair", value: "Shaved" },
+  { label: "Ethnicity", value: "Caucasian" },
+  { label: "Orientation", value: "Straight" },
+  { label: "Languages", value: "English" },
+  { label: "Available for", value: "Incall Only" },
+];
 
 const whyChooseNikkiFeatures = [
   {
@@ -26,7 +39,7 @@ const whyChooseNikkiFeatures = [
     description: 'You’re not booking from a list — you’re connecting with a real woman. I\'m selective with whom I spend time, which means when we meet, you\'re getting my full attention. Our chemistry? Unrushed. Our vibe? Real.',
   },
   {
-    icon: <KeyRound className="h-10 w-10 text-primary" />, // Changed from ShieldCheck to KeyRound for '🤫'
+    icon: <KeyRound className="h-10 w-10 text-primary" />,
     title: 'Discretion First, Always',
     description: 'Whether you\'re high-profile or simply value your privacy, I ensure that every step of our interaction — from communication to rendezvous — remains strictly confidential. My discretion is absolute.',
   },
@@ -49,14 +62,9 @@ const whyChooseNikkiFeatures = [
 
 const whatIOfferItems = [
   {
-    icon: <Palette className="h-8 w-8 text-primary" />,
+    icon: <Wine className="h-8 w-8 text-primary" />, // Changed from Palette
     title: 'Bespoke Companionship',
-    description: 'From candlelit dinners in downtown St. Pete to upscale overnights or weekend escapes, I offer companionship designed to reflect your mood and elevate your moment.',
-  },
-  {
-    icon: <Landmark className="h-8 w-8 text-primary" />,
-    title: 'Private Events & Travel',
-    description: 'Need a plus-one with polish for a corporate gala or luxury getaway? I blend seamlessly into high-end environments and handle myself with poise, charm, and a dash of mischief when the time is right.',
+    description: 'From candlelit dinners in downtown St. Pete to best kept secrets in the bedroom. I offer companionship designed to reflect your mood and elevate your moment.',
   },
   {
     icon: <MoonStar className="h-8 w-8 text-primary" />,
@@ -73,11 +81,11 @@ const myValuesItems = [
 ];
 
 const bookingSteps = [
-    { step: 1, title: 'Submit Your Booking Request', description: 'Head over to the "Book Me" page to select your date, time, and desired experience.'},
-    { step: 2, title: 'Availability Check + Approval', description: 'My system will check your requested time slot. Once confirmed, you\'ll receive a personalized follow-up and next-step instructions.'},
-    { step: 3, title: 'Secure Payment', description: 'Upon approval, your reservation will be secured through a private Stripe checkout link or crypto wallet — your choice.'},
-    { step: 4, title: 'Calendar Sync + Confirmation', description: 'Your date is locked into my calendar. You\'ll receive an email confirmation, with optional SMS updates if requested.'},
-    { step: 5, title: 'Enjoy the Experience', description: 'Whether it’s dinner, a nightcap, or an extended escape — our time will be polished, playful, and personal.'},
+    { title: 'Submit Your Booking Request', description: 'Head over to the "Book Me" page to select your date, time, and desired experience.'},
+    { title: 'Availability Check + Approval', description: 'My system will check your requested time slot.'},
+    { title: 'Secure Payment', description: 'Upon approval, your reservation will be secured through a private Stripe checkout link or crypto wallet — your choice.'},
+    { title: 'Calendar Sync + Confirmation', description: 'Your date is locked into my calendar. You\'ll receive an email confirmation, with optional SMS updates if requested.'},
+    { title: 'Enjoy the Experience', description: 'Our time will be polished, playful, and personal.'},
 ];
 
 export default function HomePage() {
@@ -91,16 +99,34 @@ export default function HomePage() {
             Intimate. Intentional. <span className="text-primary">Unforgettable.</span>
           </p>
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            Welcome to Nikki by Night — the private world of Nikki Lix, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
+            Welcome to Nikki by Night — the private world of Miss. Nikki, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
           </p>
-          <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
+        
+          {/* Physical Attributes Section */}
+          <Card className="shadow-xl my-8 text-left bg-card/80 backdrop-blur-sm border-border/50">
+            <CardHeader>
+              <CardTitle className="text-2xl text-center text-primary">Physical Attributes</CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-muted-foreground">
+                {physicalAttributes.map(attr => (
+                  <div key={attr.label} className="flex justify-between sm:block">
+                    <span className="font-semibold text-foreground pr-2">{attr.label}:</span>
+                    <span>{attr.value}</span>
+                  </div>
+                ))}
+              </div>
+            </CardContent>
+          </Card>
+
+          <p className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
             As a fiercely independent and discerning companion, Nikki delivers more than just beauty — she curates personalized experiences designed to leave you glowing. Every encounter is approached with care, attention, and an intuitive understanding of your unique desires. No gimmicks. No agency filters. Just one woman who takes pride in the art of unforgettable company.
           </p>
           <div className="mt-10 flex justify-center gap-4">
-            <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
+            <Button asChild size="lg" className="shadow-lg hover:shadow-primary/50 transition-shadow">
               <Link href="/booking">Book an Encounter <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
-            <Button asChild size="lg" variant="outline" className="shadow-lg hover:shadow-xl transition-shadow">
+            <Button asChild size="lg" variant="outline" className="shadow-lg hover:shadow-primary/30 transition-shadow">
               <Link href="/services">Explore My Services</Link>
             </Button>
           </div>
@@ -128,8 +154,8 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseNikkiFeatures.map((feature, index) => (
-              <div key={index} className={`flex flex-col items-center text-center p-6 rounded-lg shadow-xl hover:shadow-2xl transition-shadow_transform hover:-translate-y-1 bg-card`}>
-                 <div className="mb-4 p-3 rounded-full bg-primary/10">
+              <div key={index} className={`flex flex-col items-center text-center p-6 rounded-lg shadow-xl hover:shadow-primary/30 transition-shadow_transform hover:-translate-y-1 bg-card`}>
+                 <div className="mb-4 p-3 rounded-full bg-primary/20">
                    {feature.icon}
                  </div>
                 <h3 className="text-xl font-semibold text-foreground mb-2">{feature.title}</h3>
@@ -146,11 +172,11 @@ export default function HomePage() {
           <div className="text-center mb-16">
             <h2 className="text-3xl font-bold text-foreground tracking-tight">What I Offer</h2>
           </div>
-          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-2"> {/* Adjusted to md:grid-cols-2 since there are 2 items */}
             {whatIOfferItems.map((item) => (
-              <Card key={item.title} className="text-center shadow-lg hover:shadow-xl transition-shadow_transform hover:-translate-y-1 bg-card flex flex-col">
+              <Card key={item.title} className="text-center shadow-lg hover:shadow-primary/30 transition-shadow_transform hover:-translate-y-1 bg-card flex flex-col">
                 <CardHeader className="items-center">
-                  <div className="p-3 rounded-full bg-primary/10 mb-3">
+                  <div className="p-3 rounded-full bg-primary/20 mb-3">
                     {item.icon}
                   </div>
                   <CardTitle className="text-xl font-semibold">{item.title}</CardTitle>
@@ -172,7 +198,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
             {myValuesItems.map((value) => (
-              <div key={value.title} className="p-6 rounded-lg border border-border hover:shadow-lg transition-shadow bg-card">
+              <div key={value.title} className="p-6 rounded-lg border border-border/50 hover:shadow-primary/20 transition-shadow bg-card">
                 <h3 className="text-xl font-semibold text-primary mb-2">{value.title}</h3>
                 <p className="text-muted-foreground text-sm">{value.description}</p>
               </div>
@@ -191,15 +217,10 @@ export default function HomePage() {
             </p>
           </div>
           <div className="space-y-8">
-            {bookingSteps.map((item) => (
-                <div key={item.step} className="flex items-start space-x-4">
-                    <div className="flex-shrink-0 h-10 w-10 rounded-full bg-background text-primary flex items-center justify-center text-lg font-bold shadow-md">
-                        {item.step}
-                    </div>
-                    <div>
-                        <h3 className="text-xl font-semibold text-background">{item.title}</h3>
-                        <p className="opacity-90">{item.description}</p>
-                    </div>
+            {bookingSteps.map((item, index) => (
+                <div key={index} className="p-6 rounded-lg bg-background/10 shadow-md backdrop-blur-sm">
+                    <h3 className="text-xl font-semibold text-primary-foreground mb-1">{item.title}</h3>
+                    <p className="opacity-90">{item.description}</p>
                 </div>
             ))}
           </div>
@@ -225,7 +246,7 @@ export default function HomePage() {
              So when you're ready to elevate your evening beyond the ordinary… <br/> <span className="font-semibold">You know where to find me.</span>
           </p>
           <div className="mt-10">
-            <Button asChild size="lg" className="shadow-lg hover:shadow-xl transition-shadow">
+            <Button asChild size="lg" className="shadow-lg hover:shadow-primary/50 transition-shadow">
               <Link href="/booking">Schedule an Unforgettable Experience <ArrowRight className="ml-2 h-5 w-5" /></Link>
             </Button>
           </div>
@@ -234,5 +255,3 @@ export default function HomePage() {
     </MainLayout>
   );
 }
-
-    

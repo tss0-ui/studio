@@ -1,20 +1,9 @@
-import { Suspense } from 'react';
-import BookingClient from './BookingClient';
 import { MainLayout } from '@/components/layout/MainLayout';
 import { BookingForm } from '@/components/features/booking/BookingForm';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { CalendarDays, Lock, ShieldCheck, CreditCard, Coins } from 'lucide-react';
 import Link from 'next/link';
 
-export default function BookingPage() {
-  return (
-    <div className="px-4 py-8 max-w-3xl mx-auto">
-      <Suspense fallback={<p className="text-center text-white">Loading booking details...</p>}>
-        <BookingClient />
-      </Suspense>
-    </div>
-  );
-}
 export default function BookingPage() {
   return (
     <MainLayout>

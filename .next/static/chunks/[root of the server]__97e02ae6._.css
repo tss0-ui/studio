@@ -1481,6 +1481,10 @@ main {
   max-width: 20rem;
 }
 
+.max-w-\[1425px\] {
+  max-width: 1425px;
+}
+
 .flex-1 {
   flex: 1;
 }

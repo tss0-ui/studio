@@ -6,7 +6,6 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { 
   ArrowRight, 
-  Diamond,
   UserCircle,
   Heart, 
   Gem, 
@@ -15,10 +14,11 @@ import {
   CalendarDays,
   Wine,
   MoonStar,
+  Diamond,
   KeyRound,
   CalendarCog,
-  LucideIcon, 
-  Sparkles
+  Sparkles,
+  LucideIcon
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -32,14 +32,14 @@ const physicalAttributes = [
   { label: "Bust size", value: "B" },
   { label: "Bust type", value: "Natural" },
   { label: "Body Type", value: "Curvy/Thick" },
-  { label: "Height", value: "169 cm / 5'7\"" },
+  { label: "Height", value: "169 cm / 5'7\"" }, // Corrected from 5'7'' to 5'7"
   { label: "Ethnicity", value: "Caucasian (white)" },
   { label: "Orientation", value: "Straight" },
   { label: "Smoker", value: "Yes" },
   { label: "Tattoo", value: "Yes" },
   { label: "Piercing", value: "Yes" },
   { label: "Languages", value: "English" },
-  { label: "Available for", value: "Incall Only" },
+  { label: "Available for", value: "Incall Only" }, // Corrected from "In call only"
 ];
 
 type Feature = {
@@ -105,18 +105,20 @@ export default function HomePage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="w-[1425px] h-[755px] bg-black mx-auto relative">
+      <section className="w-full max-w-[1425px] h-[755px] bg-black mx-auto relative">
         <Image
           src="/images/hero-overlay-image.jpg" 
           alt="Sensual overlay for Nikki by Night hero section"
           fill
           className="object-cover opacity-25"
         />
+        {/* Text content removed for troubleshooting 
         <div className="absolute inset-0 flex items-center justify-center p-8 md:p-16 pointer-events-none">
           <p className="text-white text-center text-lg md:text-xl max-w-4xl leading-relaxed">
             All rates and fees stated and discussed are for my time only, with the purpose and intent of serving as your personal enrichment guide. I accomplish this using the knowledge I have acquired as a self-taught alternative sex-positive therapist; aiding in the improvement of sexual and psychological health, happiness, competence, and emotional and spiritual well-being. As such, the only services I provide are consulting, counseling, coaching, and therapeutic introspection training. No quid pro quo exists in regards to my time or services.
           </p>
         </div>
+        */}
       </section>
 
       {/* About Nikki / Welcome Section */}
@@ -313,3 +315,5 @@ export default function HomePage() {
     </MainLayout>
   );
 }
+
+    

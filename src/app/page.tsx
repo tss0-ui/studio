@@ -14,8 +14,14 @@ import {
   MoonStar,
   Sparkles,
   Wine,
-  Heart, // For My Values
-  Diamond // For Luxury Escort Services & Why Choose Nikki
+  Heart, 
+  Diamond, 
+  UserCircle, // For Physical Attributes
+  ShieldCheck, // For Discretion
+  Sparkle, // For Personal Touches / Tailored
+  CalendarDays, // For Smart Sync
+  Lightbulb, // For Exclusivity / Authenticity
+  Info, // For general info like in Luxury Escort Services
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -23,39 +29,45 @@ const physicalAttributes = [
   { label: "Age", value: "31" },
   { label: "Location", value: "Pinellas County, Florida" },
   { label: "Eyes", value: "Blue" },
-  { label: "Hair", value: "Blonde, Medium Length" },
-  { label: "Height", value: "170 cm / 5'7\"" },
-  { label: "Bust", value: "Natural C" },
-  { label: "Pubic Hair", value: "Shaved" },
-  { label: "Ethnicity", value: "Caucasian" },
+  { label: "Hair color", value: "Blonde" },
+  { label: "Hair length", value: "Medium" },
+  { label: "Pubic hair", value: "Shaved" },
+  { label: "Bust size", value: "B" },
+  { label: "Bust type", value: "Natural" },
+  { label: "Body Type", value: "Curvy/Thick" },
+  { label: "Height", value: "169 cm / 5'7\"" },
+  { label: "Ethnicity", value: "Caucasian (white)" },
   { label: "Orientation", value: "Straight" },
+  { label: "Smoker", value: "Yes" },
+  { label: "Tattoo", value: "Yes" },
+  { label: "Piercing", value: "Yes" },
   { label: "Languages", value: "English" },
   { label: "Available for", value: "Incall Only" },
 ];
 
 const whyChooseNikkiFeatures = [
   {
-    icon: <Diamond className="h-10 w-10 text-primary" />, // Changed from Gem
+    icon: <Lightbulb className="h-10 w-10 text-primary" />,
     title: 'Exclusivity Meets Authenticity',
     description: 'You’re not booking from a list — you’re connecting with a real woman. I\'m selective with whom I spend time, which means when we meet, you\'re getting my full attention. Our chemistry? Unrushed. Our vibe? Real.',
   },
   {
-    icon: <KeyRound className="h-10 w-10 text-primary" />,
+    icon: <ShieldCheck className="h-10 w-10 text-primary" />,
     title: 'Discretion First, Always',
     description: 'Whether you\'re high-profile or simply value your privacy, I ensure that every step of our interaction — from communication to rendezvous — remains strictly confidential. My discretion is absolute.',
   },
   {
-    icon: <WandSparkles className="h-10 w-10 text-primary" />,
+    icon: <Sparkle className="h-10 w-10 text-primary" />,
     title: 'Tailored, Not Templated',
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
   {
-    icon: <CalendarCog className="h-10 w-10 text-primary" />,
+    icon: <CalendarDays className="h-10 w-10 text-primary" />,
     title: 'Smart Sync, Seamless Planning',
     description: 'My calendar is integrated with real-time availability. Once your preferred time is confirmed, everything is scheduled smoothly — including any travel or event prep we may need. Efficiency meets elegance.',
   },
   {
-    icon: <Gift className="h-10 w-10 text-primary" />,
+    icon: <Gift className="h-10 w-10 text-primary" />, // Kept Gift for Personal Touches as it fits
     title: 'Personal Touches',
     description: 'Expect more than just a pretty face. From thoughtful texts to surprise details, I love weaving unexpected delights into our interactions. You’ll feel seen, appreciated, and indulged.',
   },
@@ -81,14 +93,6 @@ const myValuesItems = [
     { title: 'Presence', description: 'You’ll never feel like a transaction. I’m here to be present with you, not just beside you.' },
 ];
 
-const bookingSteps = [
-    { title: 'Submit Your Booking Request', description: 'Head over to the "Book Me" page to select your date, time, and desired experience.'},
-    { title: 'Availability Check + Approval', description: 'My system will check your requested time slot.'},
-    { title: 'Secure Payment', description: 'Upon approval, your reservation will be secured through a private Stripe checkout link or crypto wallet — your choice.'},
-    { title: 'Calendar Sync + Confirmation', description: 'Your date is locked into my calendar. You\'ll receive an email confirmation, with optional SMS updates if requested.'},
-    { title: 'Enjoy the Experience', description: 'Our time will be polished, playful, and personal.'},
-];
-
 export default function HomePage() {
   return (
     <MainLayout>
@@ -108,8 +112,9 @@ export default function HomePage() {
         
           {/* Physical Attributes Section */}
           <Card className="shadow-xl my-12 text-left bg-card/80 backdrop-blur-sm border-border/50">
-            <CardHeader>
-              <CardTitle className="text-2xl text-center text-primary">Physical Attributes</CardTitle>
+            <CardHeader className="flex flex-row items-center justify-center gap-2 text-primary">
+              <UserCircle className="h-6 w-6" />
+              <CardTitle className="text-2xl">Physical Attributes</CardTitle>
             </CardHeader>
             <CardContent>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 text-muted-foreground">
@@ -140,7 +145,7 @@ export default function HomePage() {
       {/* My Mission Section */}
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Heart className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Updated icon */}
+          <Heart className="mx-auto h-12 w-12 text-primary mb-6" />
           <h2 className="text-3xl font-bold text-foreground tracking-tight">My Mission</h2>
           <p className="mt-4 text-2xl text-primary font-semibold italic">
             To turn your time into timelessness.
@@ -176,7 +181,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Sparkles className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Changed icon for variety */}
+            <Sparkles className="mx-auto h-12 w-12 text-primary mb-6" />
             <h2 className="text-3xl font-bold text-foreground tracking-tight">What I Offer</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -214,10 +219,10 @@ export default function HomePage() {
       </section>
 
       {/* My Values Section */}
-      <section className="py-16 md:py-24 bg-muted"> {/* Alternating background */}
+      <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Heart className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Consistent icon with My Mission */}
+            <Heart className="mx-auto h-12 w-12 text-primary mb-6" />
             <h2 className="text-3xl font-bold text-foreground tracking-tight">My Values</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -279,5 +284,3 @@ export default function HomePage() {
     </MainLayout>
   );
 }
-
-    

@@ -1878,6 +1878,14 @@ main {
   border-color: #0000;
 }
 
+.border-accent\/30 {
+  border-color: hsl(var(--accent) / .3);
+}
+
+.border-border {
+  border-color: hsl(var(--border));
+}
+
 .border-l-transparent {
   border-left-color: #0000;
 }
@@ -2152,6 +2160,10 @@ main {
   padding-top: 1rem;
 }
 
+.pl-1 {
+  padding-left: .25rem;
+}
+
 .text-left {
   text-align: left;
 }
@@ -2343,6 +2355,10 @@ main {
 .text-gray-400 {
   --tw-text-opacity: 1;
   color: rgb(156 163 175 / var(--tw-text-opacity, 1));
+}
+
+.text-muted-foreground\/80 {
+  color: hsl(var(--muted-foreground) / .8);
 }
 
 .underline {

@@ -1,28 +1,53 @@
-<div className="row">
-  <div className="column">
-    <img src="https://cdn-thumbs.imagevenue.com/09/57/a7/ME1ASDMM_t.jpg" alt="" />
 
-    <img src="https://cdn-thumbs.imagevenue.com/65/9b/44/ME1ASDMQ_t.jpg" alt="" />
+import { MainLayout } from '@/components/layout/MainLayout';
+import Image from 'next/image';
+import { ImageSquare } from 'lucide-react'; // Using a generic icon for the page title
 
-    <img src="https://cdn-thumbs.imagevenue.com/72/41/e1/ME1ASDMS_t.jpg" alt="" />
+const galleryImages = [
+  { id: 1, src: 'https://placehold.co/600x800.png', alt: 'Nikki posing elegantly', caption: 'Elegance Redefined', aiHint: 'elegant woman portrait' },
+  { id: 2, src: 'https://placehold.co/600x800.png', alt: 'Nikki with a playful smile', caption: 'Playful Moments', aiHint: 'woman playful smile' },
+  { id: 3, src: 'https://placehold.co/600x800.png', alt: 'Nikki in a luxurious setting', caption: 'Luxury Awaits', aiHint: 'luxurious boudoir' },
+  { id: 4, src: 'https://placehold.co/600x800.png', alt: 'Nikki exuding confidence', caption: 'Confident Gaze', aiHint: 'confident woman fashion' },
+  { id: 5, src: 'https://placehold.co/600x800.png', alt: 'Nikki in an artistic pose', caption: 'Artistic Flair', aiHint: 'artistic sensual photo' },
+  { id: 6, src: 'https://placehold.co/600x800.png', alt: 'Nikki, sensual and captivating', caption: 'Captivating Charm', aiHint: 'sensual allure' },
+  { id: 7, src: 'https://placehold.co/600x800.png', alt: 'Nikki ready for an evening out', caption: 'Evening Glow', aiHint: 'woman evening dress' },
+  { id: 8, src: 'https://placehold.co/600x800.png', alt: 'Nikki in a mysterious shot', caption: 'Mysterious Nights', aiHint: 'mysterious silhouette night' },
+];
 
-    <img src="https://cdn-thumbs.imagevenue.com/4d/5b/15/ME1ASDMU_t.jpg" alt="" />
-  </div>
-  
-  <div className="column">
-    <img src="https://cdn-thumbs.imagevenue.com/e4/e3/a9/ME1ASDMV_t.jpg" alt="" />
+export default function GalleryPage() {
+  return (
+    <MainLayout>
+      <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
+        <div className="text-center mb-12">
+          <ImageSquare className="mx-auto h-12 w-12 text-primary mb-4" />
+          <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
+            Nikki's Gallery
+          </h1>
+          <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
+            A glimpse into the world of Nikki by Night.
+          </p>
+        </div>
 
-    <img src="https://cdn-thumbs.imagevenue.com/a7/75/c3/ME1ASDMY_t.jpg" alt="" />
-
-    <img src="https://cdn-thumbs.imagevenue.com/74/7e/a3/ME1ASDMZ_t.jpg" alt="" />
-  </div>
-  <div className="column">
-    <img src="https://cdn-thumbs.imagevenue.com/ea/52/7b/ME1ASDN2_t.jpg" alt="" />
-
-    <img src="https://cdn-thumbs.imagevenue.com/38/31/47/ME1ASDN4_t.jpg" alt="" />
-
-    <img src="https://cdn-thumbs.imagevenue.com/24/ea/14/ME1ASDN9_t.jpg" alt="" />
-
-    <img src="https://cdn-thumbs.imagevenue.com/34/c8/79/ME1ASDND_t.png" alt="" />
-  </div>
-</div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+          {galleryImages.map((image) => (
+            <div key={image.id} className="group relative overflow-hidden rounded-lg shadow-lg cursor-pointer aspect-[3/4]">
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                data-ai-hint={image.aiHint}
+              />
+              <div className="absolute inset-0 bg-black bg-opacity-0 transition-opacity duration-300 ease-in-out group-hover:bg-opacity-20"></div>
+              <div className="absolute bottom-0 left-0 w-full p-4 bg-gradient-to-t from-black/80 to-transparent text-white 
+                              transform translate-y-full transition-transform duration-300 ease-in-out group-hover:translate-y-0">
+                <h3 className="text-lg font-semibold">{image.caption}</h3>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </MainLayout>
+  );
+}

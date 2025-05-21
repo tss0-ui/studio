@@ -1,7 +1,7 @@
 
 import { MainLayout } from '@/components/layout/MainLayout';
 import Image from 'next/image';
-import { ImageSquare } from 'lucide-react'; // Using a generic icon for the page title
+import { ImageIcon } from 'lucide-react'; // Changed from ImageSquare to ImageIcon
 
 const galleryImages = [
   { id: 1, src: 'https://placehold.co/600x800.png', alt: 'Nikki posing elegantly', caption: 'Elegance Redefined', aiHint: 'elegant woman portrait' },
@@ -19,7 +19,7 @@ export default function GalleryPage() {
     <MainLayout>
       <div className="container mx-auto px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <ImageSquare className="mx-auto h-12 w-12 text-primary mb-4" />
+          <ImageIcon className="mx-auto h-12 w-12 text-primary mb-4" /> {/* Changed from ImageSquare to ImageIcon */}
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
             Nikki's Gallery
           </h1>

@@ -1,31 +1,35 @@
 
 import { SiteLogo } from './SiteLogo';
-import { Facebook, Instagram, Twitter } from 'lucide-react';
 import Link from 'next/link';
+import { navigationLinks } from '@/constants/navigation';
 
 export function Footer() {
-  const currentYear = new Date().getFullYear();
+  const footerNavLinks = navigationLinks.filter(link => link.label !== 'Book Now!');
 
   return (
     <footer className="border-t border-border/40 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        <div className="flex flex-col items-center justify-between gap-6 md:flex-row">
-          <SiteLogo />
-          <div className="flex flex-col md:flex-row items-center gap-2 md:gap-4 text-sm text-muted-foreground">
-            <span>&copy; {currentYear} Nikki By Night. All rights reserved.</span>
-            <Link href="/legal-disclaimer" className="hover:text-primary">
-              Legal Disclaimer
-            </Link>
+      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-center">
+          <div className="flex justify-center md:justify-start">
+            <SiteLogo />
           </div>
-          <div className="flex space-x-4">
-            <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary">
-              <Facebook size={20} />
-            </Link>
-            <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary">
-              <Instagram size={20} />
-            </Link>
-            <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary">
-              <Twitter size={20} />
+
+          <div className="flex flex-col items-center space-y-3 text-center">
+            <nav className="flex flex-wrap justify-center gap-x-5 gap-y-2">
+              {footerNavLinks.map((item) => (
+                <Link key={item.label} href={item.href} className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+            <p className="text-xs text-muted-foreground/80">
+              &copy; 2025 Nikki By Night - TLee Apps. All rights reserved.
+            </p>
+          </div>
+
+          <div className="flex justify-center md:justify-end">
+            <Link href="/legal-disclaimer" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+              Legal Disclaimer
             </Link>
           </div>
         </div>

@@ -4,7 +4,7 @@ import { ServiceCard } from '@/components/features/services/ServiceCard';
 import { services } from '@/constants/services';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
-import { Check, ListChecks, BadgeDollarSign, Info } from 'lucide-react';
+import { Check, ListChecks, BadgeDollarSign, Info, Gem } from 'lucide-react';
 import Link from 'next/link';
 
 const escortActivities = [
@@ -44,6 +44,18 @@ export default function ServicesPage() {
           {services.map((service) => (
             <ServiceCard key={service.id} service={service} />
           ))}
+        </div>
+
+        {/* Fancy Divider */}
+        <div className="relative my-16">
+          <div className="absolute inset-0 flex items-center" aria-hidden="true">
+            <div className="w-full border-t border-primary/30" />
+          </div>
+          <div className="relative flex justify-center">
+            <span className="bg-background px-3">
+              <Gem className="h-6 w-6 text-primary" />
+            </span>
+          </div>
         </div>
 
         <div className="space-y-12">

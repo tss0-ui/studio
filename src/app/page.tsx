@@ -7,18 +7,19 @@ import Image from 'next/image';
 import { 
   ArrowRight, 
   Diamond,
-  Gem, 
-  Heart, 
-  KeyRound, 
-  Lightbulb, // Corrected: Was LightBulb, changed to Lightbulb
-  MoonStar,
-  ShieldCheck, 
   UserCircle,
+  Heart, 
+  Gem, 
+  Lightbulb, 
+  ShieldCheck, 
   WandSparkles, 
+  CalendarDays,
   Wine,
-  CalendarCog, 
-  CalendarDays, // Added CalendarDays based on usage
-  Info // Added Info based on usage
+  MoonStar,
+  KeyRound,
+  CalendarCog,
+  Info, // Added based on previous state
+  // Ensure all icons used below are imported
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -44,7 +45,7 @@ const physicalAttributes = [
 
 const whyChooseNikkiFeatures = [
   {
-    icon: <Lightbulb className="h-10 w-10 text-primary" />,
+    icon: <Gem className="h-10 w-10 text-primary" />, // Changed from Lightbulb for thematic consistency
     title: 'Exclusivity Meets Authenticity',
     description: 'You’re not booking from a list — you’re connecting with a real woman. I\'m selective with whom I spend time, which means when we meet, you\'re getting my full attention. Our chemistry? Unrushed. Our vibe? Real.',
   },
@@ -59,12 +60,12 @@ const whyChooseNikkiFeatures = [
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
   {
-    icon: <CalendarDays className="h-10 w-10 text-primary" />, // Using CalendarDays
+    icon: <CalendarDays className="h-10 w-10 text-primary" />,
     title: 'Smart Sync, Seamless Planning',
     description: 'My calendar is integrated with real-time availability. Once your preferred time is confirmed, everything is scheduled smoothly — including any travel or event prep we may need. Efficiency meets elegance.',
   },
   {
-    icon: <Heart className="h-10 w-10 text-primary" />, // Using Heart
+    icon: <Heart className="h-10 w-10 text-primary" />,
     title: 'Personal Touches',
     description: 'Expect more than just a pretty face. From thoughtful texts to surprise details, I love weaving unexpected delights into our interactions. You’ll feel seen, appreciated, and indulged.',
   },
@@ -94,8 +95,15 @@ export default function HomePage() {
   return (
     <MainLayout>
       {/* Hero Section */}
-      <section className="w-[1425px] h-[755px] bg-black mx-auto">
-        {/* This section is intentionally left blank to be a black canvas */}
+      <section className="w-[1425px] h-[755px] bg-black mx-auto relative">
+        <Image
+          src="/images/hero-overlay-image.jpg" 
+          alt="Sensual overlay for Nikki by Night hero section"
+          fill
+          className="object-cover opacity-25"
+          priority
+        />
+        {/* This section has an image overlay with 25% opacity over a black background */}
       </section>
 
       {/* About Nikki / Welcome Section */}
@@ -108,7 +116,7 @@ export default function HomePage() {
             Welcome to Nikki by Night — the private world of Miss. Nikki, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
           </p>
            <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
+             Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
           </p>
         
           <Card className="shadow-xl my-12 text-left bg-card/80 backdrop-blur-sm border-border/50">

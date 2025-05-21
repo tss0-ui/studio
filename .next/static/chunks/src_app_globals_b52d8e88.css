@@ -767,6 +767,10 @@ main {
   height: 100svh;
 }
 
+.h-\[755px\] {
+  height: 755px;
+}
+
 .max-h-96 {
   max-height: 24rem;
 }
@@ -877,6 +881,10 @@ main {
 
 .w-full {
   width: 100%;
+}
+
+.w-\[1425px\] {
+  width: 1425px;
 }
 
 .min-w-0 {
@@ -1801,6 +1809,10 @@ main {
 
 .opacity-90 {
   opacity: .9;
+}
+
+.opacity-65 {
+  opacity: .65;
 }
 
 .shadow-\[0_0_0_1px_hsl\(var\(--sidebar-border\)\)\] {

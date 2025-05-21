@@ -3,20 +3,21 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { MainLayout } from '@/components/layout/MainLayout';
 import Link from 'next/link';
+import Image from 'next/image';
 import { 
   ArrowRight, 
+  Diamond,
   Gem, 
-  KeyRound, 
-  WandSparkles, 
-  CalendarCog, 
   Heart, 
-  Diamond, 
-  UserCircle,
-  ShieldCheck, 
-  CalendarDays,
+  KeyRound, 
   Lightbulb,
-  Wine,
   MoonStar,
+  ShieldCheck, 
+  UserCircle,
+  WandSparkles, 
+  Wine,
+  CalendarCog, 
+  CalendarDays,
   Info
 } from 'lucide-react';
 
@@ -92,9 +93,18 @@ const myValuesItems = [
 export default function HomePage() {
   return (
     <MainLayout>
-      {/* Simplified Hero Section - Black Canvas */}
-      <section className="bg-black w-full py-16 md:py-20">
-        {/* This section is intentionally empty to create a black canvas */}
+      {/* Hero Section */}
+      <section className="relative w-[1425px] h-[755px] bg-black mx-auto">
+        <div className="absolute inset-0 opacity-65">
+          <Image
+            src="/images/hero-overlay-image.jpg" 
+            alt="Nikki relaxing on a couch"
+            layout="fill"
+            objectFit="cover"
+            priority
+            data-ai-hint="sensual woman couch"
+          />
+        </div>
       </section>
 
       {/* About Nikki / Welcome Section */}

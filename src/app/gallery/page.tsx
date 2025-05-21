@@ -21,18 +21,36 @@ export default function GalleryPage() {
     "https://cdn-thumbs.imagevenue.com/34/c8/79/ME1ASDND_t.png",
   ];
 
-  const imgClass =
-    "mt-2 w-full max-w-[180px] mx-auto rounded-md cursor-pointer transition duration-200 ease-linear filter grayscale brightness-50 hover:grayscale-0 hover:brightness-100";
+  const imgClass = `
+    mt-2 w-full max-w-[180px] mx-auto rounded-md cursor-pointer
+    filter grayscale brightness-50 blur-sm
+    transition duration-300 ease-in-out
+    hover:blur-0 hover:grayscale-0 hover:brightness-100
+  `;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 p-4">
-      {[column1, column2, column3].map((column, colIndex) => (
-        <div key={colIndex} className="flex flex-col items-center space-y-2">
-          {column.map((src, idx) => (
-            <img key={idx} src={src} alt="" className={imgClass} />
-          ))}
-        </div>
-      ))}
+    <div className="px-4 py-8 max-w-7xl mx-auto">
+      {/* Header */}
+      <h1 className="text-4xl font-bold text-center text-white">Gallery</h1>
+      <p className="text-lg text-center text-gray-400 mt-2">
+        A Sneak Peek of Nikki&apos;s Beauty
+      </p>
+
+      {/* Gallery Grid */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-2 mt-8">
+        {[column1, column2, column3].map((column, colIndex) => (
+          <div key={colIndex} className="flex flex-col items-center space-y-2">
+            {column.map((src, idx) => (
+              <img key={idx} src={src} alt="" className={imgClass} />
+            ))}
+          </div>
+        ))}
+      </div>
+
+      {/* Footer CTA */}
+      <p className="text-center text-sm text-gray-300 mt-10">
+        For pricing details, please visit our <a href="/rates" className="underline hover:text-pink-400">Rates</a> page.
+      </p>
     </div>
   );
 }

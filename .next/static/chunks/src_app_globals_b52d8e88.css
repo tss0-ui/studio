@@ -963,6 +963,10 @@ main {
   max-width: 20rem;
 }
 
+.max-w-\[180px\] {
+  max-width: 180px;
+}
+
 .flex-1 {
   flex: 1;
 }

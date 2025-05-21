@@ -17,9 +17,8 @@ import {
   MoonStar,
   KeyRound,
   CalendarCog,
-  LucideIcon,
-  Briefcase, // Added for "Private Events & Travel" before it was removed, keeping just in case.
-  Sparkles // Added for "Personal Touches"
+  LucideIcon, 
+  Sparkles
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -33,18 +32,18 @@ const physicalAttributes = [
   { label: "Bust size", value: "B" },
   { label: "Bust type", value: "Natural" },
   { label: "Body Type", value: "Curvy/Thick" },
-  { label: "Height", value: "169 cm / 5'7\"" }, // Corrected inches
+  { label: "Height", value: "169 cm / 5'7\"" },
   { label: "Ethnicity", value: "Caucasian (white)" },
   { label: "Orientation", value: "Straight" },
   { label: "Smoker", value: "Yes" },
   { label: "Tattoo", value: "Yes" },
   { label: "Piercing", value: "Yes" },
   { label: "Languages", value: "English" },
-  { label: "Available for", value: "Incall Only" }, // Corrected typo
+  { label: "Available for", value: "Incall Only" },
 ];
 
 type Feature = {
-  icon: React.ReactElement<LucideIcon>;
+  icon: React.ReactElement<LucideIcon>; 
   title: string;
   description: string;
 };
@@ -61,7 +60,7 @@ const whyChooseNikkiFeatures: Feature[] = [
     description: 'Whether you\'re high-profile or simply value your privacy, I ensure that every step of our interaction — from communication to rendezvous — remains strictly confidential. My discretion is absolute.',
   },
   {
-    icon: <WandSparkles className="h-10 w-10 text-primary" />, // Changed from Sparkles to WandSparkles
+    icon: <WandSparkles className="h-10 w-10 text-primary" />,
     title: 'Tailored, Not Templated',
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
@@ -71,7 +70,7 @@ const whyChooseNikkiFeatures: Feature[] = [
     description: 'My calendar is integrated with real-time availability. Once your preferred time is confirmed, everything is scheduled smoothly — including any travel or event prep we may need. Efficiency meets elegance.',
   },
   {
-    icon: <Sparkles className="h-10 w-10 text-primary" />, // Changed from Heart to Sparkles
+    icon: <Sparkles className="h-10 w-10 text-primary" />,
     title: 'Personal Touches',
     description: 'Expect more than just a pretty face. From thoughtful texts to surprise details, I love weaving unexpected delights into our interactions. You’ll feel seen, appreciated, and indulged.',
   },
@@ -112,10 +111,9 @@ export default function HomePage() {
           alt="Sensual overlay for Nikki by Night hero section"
           fill
           className="object-cover opacity-25"
-          priority
         />
         <div className="absolute inset-0 flex items-center justify-center p-8 md:p-16 pointer-events-none">
-          <p className="text-white text-center text-lg md:text-xl max-w-4xl leading-relaxed shadow-black/50 text-shadow-[0_1px_3px_var(--tw-shadow-color)]">
+          <p className="text-white text-center text-lg md:text-xl max-w-4xl leading-relaxed">
             All rates and fees stated and discussed are for my time only, with the purpose and intent of serving as your personal enrichment guide. I accomplish this using the knowledge I have acquired as a self-taught alternative sex-positive therapist; aiding in the improvement of sexual and psychological health, happiness, competence, and emotional and spiritual well-being. As such, the only services I provide are consulting, counseling, coaching, and therapeutic introspection training. No quid pro quo exists in regards to my time or services.
           </p>
         </div>
@@ -152,7 +150,7 @@ export default function HomePage() {
           </Card>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            As a fiercely independent and discerning companion, Nikki delivers more than just beauty — I curate personalized experiences designed to leave you glowing. Every encounter is approached with care, attention, and an intuitive understanding of your unique desires. No gimmicks. No agency filters. Just one woman who takes pride in the art of unforgettable company.
+            As a fiercely independent and discerning companion, Nikki delivers more than just beauty — she curates personalized experiences designed to leave you glowing. Every encounter is approached with care, attention, and an intuitive understanding of your unique desires. No gimmicks. No agency filters. Just one woman who takes pride in the art of unforgettable company.
           </p>
           <div className="mt-10 flex justify-center gap-4">
             <Button asChild size="lg" className="shadow-lg hover:shadow-primary/50 transition-shadow">
@@ -315,5 +313,3 @@ export default function HomePage() {
     </MainLayout>
   );
 }
-
-    

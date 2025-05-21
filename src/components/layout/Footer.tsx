@@ -7,41 +7,45 @@ export function Footer() {
   const footerNavLinks = navigationLinks.filter(link => link.label !== 'Book Now!');
 
   return (
-    <footer className="border-t border-border/40 bg-background">
-      <div className="container mx-auto max-w-7xl px-4 py-8 sm:px-6 lg:px-8">
-        {/* Top Part: Logo and Links Grid */}
-        <div className="flex flex-col items-center md:flex-row md:items-center md:justify-start mb-8">
-          <div className="mb-6 md:mb-0 md:mr-10 lg:mr-16 flex-shrink-0">
+    <footer className="border-t border-border/40 bg-background py-8">
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        {/* Top Part: Logo and Quick Links */}
+        <div className="flex flex-col items-center text-center md:items-start md:text-left mb-8">
+          <div className="mb-4"> {/* Logo container */}
             <SiteLogo />
           </div>
-          <nav className="grid grid-cols-3 gap-x-4 xs:gap-x-6 sm:gap-x-8 gap-y-2 text-center md:text-left w-full md:w-auto">
-            {footerNavLinks.map((item) => (
-              <Link
-                key={item.label}
-                href={item.href}
-                className="text-sm text-muted-foreground hover:text-primary transition-colors py-0.5"
-              >
-                {item.label}
-              </Link>
-            ))}
+          <nav aria-label="Footer Quick Links">
+            <ul className="grid grid-cols-2 gap-x-8 gap-y-2 text-sm">
+              {footerNavLinks.map((item) => (
+                <li key={item.label}>
+                  <Link
+                    href={item.href}
+                    className="text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    {item.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
           </nav>
         </div>
 
-        {/* Legal Disclaimer - No top border on this specific div, positioned above copyright, far right on desktop */}
-        <div className="flex justify-center md:justify-end mb-6">
-          <Link
-            href="/legal-disclaimer"
-            className="text-sm text-muted-foreground hover:text-primary transition-colors"
-          >
-            Legal Disclaimer
-          </Link>
-        </div>
-
-        {/* Copyright - very bottom, centered */}
-        <div className="text-center">
-          <p className="text-xs text-muted-foreground/80">
-            &copy; 2025 Nikki By Night - TLee Apps. All rights reserved.
+        {/* Bottom Part: Copyright and Legal Disclaimer */}
+        <div className="mt-6 text-xs text-muted-foreground/80">
+          <p className="text-center">
+            © 2025 Nikki By Night - TLee Apps.
           </p>
+          <div className="relative mt-1 w-full text-center">
+            <p>All rights reserved.</p>
+            <div className="mt-1 sm:mt-0 sm:absolute sm:right-0 sm:top-0">
+              <Link
+                href="/legal-disclaimer"
+                className="hover:text-primary transition-colors"
+              >
+                Legal Disclaimer
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </footer>

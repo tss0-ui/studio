@@ -65,16 +65,7 @@ export default function ContactPage() {
                   <div>
                     <h3 className="font-semibold">Email</h3>
                     <Link href="mailto:contact@nikkibynight.example.com" className="text-muted-foreground hover:text-primary break-all">
-                      contact@nikkibynight.example.com
-                    </Link>
-                  </div>
-                </div>
-                <div className="flex items-start">
-                  <Phone className="h-6 w-6 mr-3 mt-1 text-primary shrink-0" />
-                  <div>
-                    <h3 className="font-semibold">Phone (Text Preferred for Discretion)</h3>
-                    <Link href="tel:+1234567890" className="text-muted-foreground hover:text-primary">
-                      +1 (234) 567-890
+                      contact@nikkibynight.com
                     </Link>
                   </div>
                 </div>

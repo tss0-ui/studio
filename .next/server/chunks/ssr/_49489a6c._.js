@@ -623,47 +623,30 @@ __turbopack_context__.s({
 const services = [
     {
         id: '1',
-        name: 'The Signature Experience',
-        description: 'A comprehensive session tailored to your deepest desires. Includes premium amenities.',
-        price: '$500',
-        duration: '2 hours',
+        name: 'Quick Visit (QV)',
+        description: "A quick engagement. Perfect for the ones rushin', but still need a hand bussin'",
+        price: '$80',
+        duration: '15 min',
         image: 'https://placehold.co/600x400.png',
-        aiHint: 'sensual ambiance candlelit',
-        features: [
-            'Personalized consultation',
-            'Premium ambiance',
-            'Refreshments included',
-            'Extended duration option'
-        ]
+        aiHint: 'playful tease quick'
     },
     {
         id: '2',
-        name: 'Evening Interlude',
-        description: 'A shorter, yet equally luxurious encounter perfect for a sophisticated evening.',
-        price: '$300',
-        duration: '1 hour',
+        name: 'Half Hour (HHR)',
+        description: 'You got 30 minutes. Make it count.',
+        price: '$150',
+        duration: '30 min',
         image: 'https://placehold.co/600x400.png',
-        aiHint: 'intimate encounter silhouette',
-        features: [
-            'Focused session',
-            'Choice of theme',
-            'Discreet & private'
-        ]
+        aiHint: 'intense connection silhouette'
     },
     {
         id: '3',
-        name: 'The Night Owl Special',
-        description: 'An extended session for those who seek a truly immersive and unforgettable night.',
-        price: '$800',
-        duration: '4 hours',
+        name: 'Power Hour',
+        description: "You got a 60 minutes, I don't want to be able to walk in 61.",
+        price: '$300',
+        duration: '1 hour',
         image: 'https://placehold.co/600x400.png',
-        aiHint: 'opulent hotel suite night',
-        features: [
-            'All-inclusive',
-            'Multiple activities',
-            'Gourmet snacks & drinks',
-            'Utmost privacy'
-        ]
+        aiHint: 'energetic encounter passion'
     },
     {
         id: '4',

@@ -38,14 +38,4 @@ export const services: Service[] = [
     image: 'https://placehold.co/600x400.png',
     aiHint: 'energetic encounter passion',
   },
-  {
-    id: '4',
-    name: 'Virtual Charm',
-    description: 'Engage in a captivating virtual experience from the comfort of your own space.',
-    price: '$200',
-    duration: '1 hour (Virtual)',
-    image: 'https://placehold.co/600x400.png',
-    aiHint: 'flirty video chat',
-    features: ['Secure video platform', 'Personalized interaction', 'Flexible scheduling']
-  },
 ];

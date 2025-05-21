@@ -11,16 +11,15 @@ import {
   WandSparkles, 
   CalendarCog, 
   Gift, 
-  MoonStar,
-  Sparkles,
-  Wine,
   Heart, 
   Diamond, 
   UserCircle,
   ShieldCheck, 
   CalendarDays,
   Lightbulb,
-  Info,
+  Wine,
+  MoonStar,
+  Info
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -98,11 +97,10 @@ export default function HomePage() {
       {/* New Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center text-white overflow-hidden">
         <Image
-          src="https://placehold.co/1920x1080.png"
+          src="/images/hero-background.jpg"
           alt="Nikki by Night background"
           fill
           className="object-cover z-0"
-          data-ai-hint="sensual woman couch"
           priority
         />
         <div className="absolute inset-0 bg-black/70 z-10"></div>
@@ -133,7 +131,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* About Nikki / Welcome Section (Previously the first hero) */}
+      {/* About Nikki / Welcome Section */}
       <section className="py-16 md:py-24 bg-background">
         <div className="container mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
           <p className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl md:text-6xl mb-6">
@@ -143,7 +141,7 @@ export default function HomePage() {
             Welcome to Nikki by Night — the private world of Miss. Nikki, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
           </p>
           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
+             Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
           </p>
         
           <Card className="shadow-xl my-12 text-left bg-card/80 backdrop-blur-sm border-border/50">
@@ -216,7 +214,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Sparkles className="mx-auto h-12 w-12 text-primary mb-6" />
+            <WandSparkles className="mx-auto h-12 w-12 text-primary mb-6" />
             <h2 className="text-3xl font-bold text-foreground tracking-tight">What I Offer</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -248,7 +246,15 @@ export default function HomePage() {
             When you choose Nikki, you are choosing an elite escort experience that is second to none. Looking for a private, intimate experience? Nikki delivers a range of luxury escort services that ensure every moment with her is unforgettable. Her services are designed to suit your preferences and schedule.
           </p>
           <p className="mt-4 text-lg text-muted-foreground">
-            For more information, check out my <Link href="/rates" className="text-primary hover:underline">rates</Link> and <Link href="/services" className="text-primary hover:underline">services</Link> pages.
+            For more information, check out my{' '}
+            <Link href="/rates" className="text-primary hover:underline">
+              rates
+            </Link>{' '}
+            and{' '}
+            <Link href="/services" className="text-primary hover:underline">
+              services
+            </Link>{' '}
+            pages.
           </p>
         </div>
       </section>
@@ -299,7 +305,7 @@ export default function HomePage() {
       {/* Let's Make Magic CTA Section */}
       <section className="py-20 md:py-32 bg-background">
         <div className="container mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 text-center">
-          <Sparkles className="mx-auto h-12 w-12 text-primary mb-6" />
+          <WandSparkles className="mx-auto h-12 w-12 text-primary mb-6" />
           <h2 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
             Let's Make <span className="text-primary">Magic</span>
           </h2>
@@ -319,3 +325,5 @@ export default function HomePage() {
     </MainLayout>
   );
 }
+
+    

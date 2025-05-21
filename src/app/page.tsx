@@ -104,6 +104,11 @@ export default function HomePage() {
             priority
           />
         </div>
+        <div
+          className="absolute font-neonderthaw text-white opacity-50 tracking-[2px] flex items-center justify-center left-[3.5px] top-[77px] w-[589px] h-[86px] text-[72px] leading-[86px]"
+        >
+          Nikki
+        </div>
       </section>
 
       {/* About Nikki / Welcome Section */}
@@ -173,7 +178,7 @@ export default function HomePage() {
           </div>
           <div className="grid grid-cols-1 gap-x-8 gap-y-12 md:grid-cols-2 lg:grid-cols-3">
             {whyChooseNikkiFeatures.map((feature, index) => (
-              <div key={index} className={`flex flex-col items-center text-center p-6 rounded-lg shadow-xl hover:shadow-primary/30 transition-shadow_transform hover:-translate-y-1 bg-card`}>
+              <div key={index} className="flex flex-col items-center text-center p-6 rounded-lg shadow-xl hover:shadow-primary/30 transition-shadow_transform hover:-translate-y-1 bg-card">
                  <div className="mb-4 p-3 rounded-full bg-primary/20">
                    {feature.icon}
                  </div>

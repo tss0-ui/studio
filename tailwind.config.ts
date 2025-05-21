@@ -15,6 +15,7 @@ export default {
         sans: ["var(--font-inter)", ...fontFamily.sans],
         heading: ["var(--font-montserrat)", ...fontFamily.sans],
         cursive: ["var(--font-great-vibes)", "cursive"],
+        neonderthaw: ["var(--font-neonderthaw)", "cursive"],
       },
   		colors: {
   			background: 'hsl(var(--background))',

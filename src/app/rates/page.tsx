@@ -32,19 +32,29 @@ const additionalServiceRates = [
 
 export default function RatesPage() {
   const [isPolicyPopupOpen, setIsPolicyPopupOpen] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
 
   useEffect(() => {
-    // Open the popup once the component is mounted
-    setIsPolicyPopupOpen(true);
+    setIsMounted(true);
   }, []);
 
+  useEffect(() => {
+    // Open the popup once the component is mounted and if not previously closed
+    if (isMounted && !localStorage.getItem('depositPolicyAccepted')) {
+      setIsPolicyPopupOpen(true);
+    }
+  }, [isMounted]);
+
   const handleClosePolicyPopup = () => {
+    if (isMounted) {
+        localStorage.setItem('depositPolicyAccepted', 'true');
+    }
     setIsPolicyPopupOpen(false);
   };
 
   return (
     <MainLayout>
-      <DepositPolicyPopup isOpen={isPolicyPopupOpen} onClose={handleClosePolicyPopup} />
+      {isMounted && <DepositPolicyPopup isOpen={isPolicyPopupOpen} onClose={handleClosePolicyPopup} />}
       <div className="container mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
           <DollarSign className="mx-auto h-12 w-12 text-primary mb-4" />
@@ -57,8 +67,6 @@ export default function RatesPage() {
         </div>
 
         <div className="space-y-10">
-          {/* Deposit & Cancellation Policy Card removed, now handled by popup */}
-
           <Card className="shadow-xl hover:shadow-primary/30 transition-all duration-300 ease-in-out transform hover:-translate-y-1">
             <CardHeader className="flex flex-row items-center gap-4">
               <CalendarClock className="h-10 w-10 text-primary" />
@@ -140,3 +148,4 @@ export default function RatesPage() {
     </MainLayout>
   );
 }
+

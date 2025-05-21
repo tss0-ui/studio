@@ -1,5 +1,6 @@
 
 import type { Metadata } from 'next';
+import Image from 'next/image';
 import { inter, montserrat, greatVibes, neonderthaw } from '@/lib/fonts';
 import './globals.css';
 import { Toaster } from "@/components/ui/toaster";
@@ -18,6 +19,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${inter.variable} ${montserrat.variable} ${greatVibes.variable} ${neonderthaw.variable} font-sans antialiased`}>
+        <Image
+          src="/images/site-background-pattern.jpg" 
+          alt="Abstract background pattern"
+          fill
+          className="object-cover fixed inset-0 z-[-1] blur-2xl"
+          priority
+        />
         {children}
         <Toaster />
         <DisclaimerPopup />

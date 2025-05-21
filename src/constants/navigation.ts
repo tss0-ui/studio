@@ -9,6 +9,6 @@ export const navigationLinks: NavItem[] = [
   { label: 'Services', href: '/services' },
   { label: 'Rates', href: '/rates' },
   { label: 'Book Now', href: '/booking' },
-  { label: 'Payments', href: '/payments' },
+  { label: 'Gallery', href: '/gallery' },
   { label: 'Contact', href: '/contact' },
 ];

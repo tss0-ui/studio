@@ -305,8 +305,8 @@ const navigationLinks = [
         href: '/booking'
     },
     {
-        label: 'Payments',
-        href: '/payments'
+        label: 'Gallery',
+        href: '/gallery'
     },
     {
         label: 'Contact',

@@ -1,74 +1,58 @@
 
 import { MainLayout } from '@/components/layout/MainLayout';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { CreditCard, Bitcoin, ShieldCheck } from 'lucide-react'; // Bitcoin is a placeholder for general crypto
+import Image from 'next/image';
+import { Images } from 'lucide-react'; // Icon for gallery page
 
-export default function PaymentsPage() {
+const galleryImages = [
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 1', caption: 'Elegance and Poise', aiHint: 'elegant pose' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 2', caption: 'Sensual Allure', aiHint: 'sensual look' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 3', caption: 'Glamorous Style', aiHint: 'glamorous fashion' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 4', caption: 'Confident Gaze', aiHint: 'confident gaze' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 5', caption: 'Luxury Embodied', aiHint: 'luxury lifestyle' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 6', caption: 'Sophisticated Charm', aiHint: 'sophisticated style' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 7', caption: 'Artistic Portrait', aiHint: 'artistic portrait' },
+  { src: 'https://placehold.co/600x800.png', alt: 'Image of Nikki 8', caption: 'Captivating Beauty', aiHint: 'captivating beauty' },
+];
+
+export default function GalleryPage() {
   return (
     <MainLayout>
-      <div className="container mx-auto max-w-4xl px-4 py-12 sm:px-6 lg:px-8">
+      <div className="container mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
         <div className="text-center mb-12">
-          <CreditCard className="mx-auto h-12 w-12 text-primary mb-4" />
+          <Images className="mx-auto h-12 w-12 text-primary mb-4" />
           <h1 className="text-4xl font-extrabold tracking-tight text-foreground sm:text-5xl">
-            Payment Information
+            Nikki's Gallery
           </h1>
           <p className="mt-4 max-w-2xl mx-auto text-lg text-muted-foreground">
-            Secure and flexible payment options for your convenience.
+            A glimpse into my world.
           </p>
         </div>
 
-        <div className="space-y-8">
-          <Card className="shadow-lg">
-            <CardHeader className="flex flex-row items-center gap-4">
-              <ShieldCheck className="h-10 w-10 text-green-500" />
-              <div>
-                <CardTitle className="text-2xl">Secure Transactions</CardTitle>
-                <CardDescription>
-                  All payments are processed securely to protect your financial information.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p>I prioritize your security and privacy in all transactions. My systems use industry-standard encryption and security protocols.</p>
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-lg">
-            <CardHeader className="flex flex-row items-center gap-4">
-               <div className="p-2 bg-primary/10 rounded-md"><CreditCard className="h-8 w-8 text-primary" /></div>
-              <div>
-                <CardTitle className="text-xl">Stripe Payments</CardTitle>
-                <CardDescription>
-                  I accept all major credit and debit cards through Stripe, a leading global payment processor.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p>Stripe provides a seamless and secure way to pay using your preferred card. Your card details are never stored on my servers.</p>
-              {/* In a real app, you might embed a Stripe payment element or link to a checkout page */}
-            </CardContent>
-          </Card>
-
-          <Card className="shadow-lg">
-            <CardHeader className="flex flex-row items-center gap-4">
-              <div className="p-2 bg-primary/10 rounded-md"><Bitcoin className="h-8 w-8 text-primary" /></div>
-              <div>
-                <CardTitle className="text-xl">Cryptocurrency Payments</CardTitle>
-                <CardDescription>
-                  For enhanced privacy, I also accept payments in select cryptocurrencies.
-                </CardDescription>
-              </div>
-            </CardHeader>
-            <CardContent>
-              <p>I currently support payments in Bitcoin (BTC), Ethereum (ETH), and Monero (XMR). Please contact me directly if you wish to pay using cryptocurrency to receive my wallet details and instructions.</p>
-              <p className="mt-2 text-sm text-muted-foreground">Note: Cryptocurrency transactions are final and non-refundable. Ensure you send the correct amount to the provided address.</p>
-            </CardContent>
-          </Card>
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 md:gap-2.5 max-w-[1600px] mx-auto">
+          {galleryImages.map((image, index) => (
+            <figure
+              key={index}
+              className="relative overflow-hidden group rounded-lg shadow-lg aspect-[3/4]"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover w-full h-full transition-transform duration-300 ease-in-out group-hover:scale-110"
+                sizes="(max-width: 640px) 100vw, (max-width: 768px) 50vw, (max-width: 1024px) 33vw, 25vw"
+                data-ai-hint={image.aiHint}
+                priority={index < 4} // Prioritize loading for the first few images
+              />
+              <figcaption
+                className="absolute bottom-0 left-0 w-full bg-black/70 text-white p-3 md:p-4 
+                           opacity-0 translate-y-full group-hover:opacity-100 group-hover:translate-y-0 
+                           transition-all duration-300 ease-in-out text-sm md:text-base"
+              >
+                {image.caption}
+              </figcaption>
+            </figure>
+          ))}
         </div>
-        
-        <p className="mt-12 text-center text-muted-foreground">
-          For any payment-related queries, please don't hesitate to <Link href="/contact" className="text-primary hover:underline">contact me</Link>.
-        </p>
       </div>
     </MainLayout>
   );

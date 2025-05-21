@@ -1815,6 +1815,10 @@ main {
   opacity: .65;
 }
 
+.mix-blend-multiply {
+  mix-blend-mode: multiply;
+}
+
 .shadow-\[0_0_0_1px_hsl\(var\(--sidebar-border\)\)\] {
   --tw-shadow: 0 0 0 1px hsl(var(--sidebar-border));
   --tw-shadow-colored: 0 0 0 1px var(--tw-shadow-color);

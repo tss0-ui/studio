@@ -35,10 +35,29 @@ export default function ContactPage() {
           <div className="space-y-8">
             <Card className="shadow-xl">
               <CardHeader>
-                <CardTitle className="text-2xl">My Contact Information</CardTitle>
-                <CardDescription>
-                  Other ways to reach me.
-                </CardDescription>
+                <CardTitle className="text-2xl">My Availability</CardTitle>
+              </CardHeader>
+              <CardContent>
+                <p className="text-muted-foreground">
+                  <strong>Monday - Friday:</strong> 11:00 AM - 2:00 AM
+                </p>
+                <p className="text-muted-foreground">
+                  <strong>Saturday:</strong> Noon - Midnight
+                </p>
+                <p className="text-muted-foreground">
+                  <strong>Sunday:</strong> 1:00 PM - Midnight
+                </p>
+                <p className="mt-2 text-muted-foreground">
+                  <strong>All major holidays:</strong> Must book 2 days in advance
+                </p>
+                <p className="mt-2 text-sm text-muted-foreground">
+                  Bookings outside these hours may be possible. Please inquire.
+                </p>
+              </CardContent>
+            </Card>
+            <Card className="shadow-xl">
+              <CardHeader>
+                <CardTitle className="text-2xl">Other Contact Methods</CardTitle>
               </CardHeader>
               <CardContent className="space-y-4">
                 <div className="flex items-start">
@@ -68,22 +87,6 @@ export default function ContactPage() {
                     </p>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-             <Card className="shadow-xl">
-              <CardHeader>
-                <CardTitle className="text-2xl">My Availability</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground">
-                  <strong>Monday - Friday:</strong> 6:00 PM - 2:00 AM
-                </p>
-                <p className="text-muted-foreground">
-                  <strong>Saturday - Sunday:</strong> By special arrangement
-                </p>
-                <p className="mt-2 text-sm text-muted-foreground">
-                  Appointments outside these hours may be possible. Please inquire.
-                </p>
               </CardContent>
             </Card>
           </div>

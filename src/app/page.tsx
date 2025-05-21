@@ -16,12 +16,11 @@ import {
   Wine,
   Heart, 
   Diamond, 
-  UserCircle, // For Physical Attributes
-  ShieldCheck, // For Discretion
-  Sparkle, // For Personal Touches / Tailored
-  CalendarDays, // For Smart Sync
-  Lightbulb, // For Exclusivity / Authenticity
-  Info, // For general info like in Luxury Escort Services
+  UserCircle,
+  ShieldCheck, 
+  CalendarDays,
+  Lightbulb,
+  Info,
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -57,7 +56,7 @@ const whyChooseNikkiFeatures = [
     description: 'Whether you\'re high-profile or simply value your privacy, I ensure that every step of our interaction — from communication to rendezvous — remains strictly confidential. My discretion is absolute.',
   },
   {
-    icon: <Sparkle className="h-10 w-10 text-primary" />,
+    icon: <WandSparkles className="h-10 w-10 text-primary" />, // Changed from Sparkle to WandSparkles for variety
     title: 'Tailored, Not Templated',
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
@@ -67,7 +66,7 @@ const whyChooseNikkiFeatures = [
     description: 'My calendar is integrated with real-time availability. Once your preferred time is confirmed, everything is scheduled smoothly — including any travel or event prep we may need. Efficiency meets elegance.',
   },
   {
-    icon: <Gift className="h-10 w-10 text-primary" />, // Kept Gift for Personal Touches as it fits
+    icon: <Gift className="h-10 w-10 text-primary" />,
     title: 'Personal Touches',
     description: 'Expect more than just a pretty face. From thoughtful texts to surprise details, I love weaving unexpected delights into our interactions. You’ll feel seen, appreciated, and indulged.',
   },
@@ -106,7 +105,7 @@ export default function HomePage() {
           <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
             Welcome to Nikki by Night — the private world of Miss. Nikki, your premier companion in St. Petersburg, Florida, for high-end encounters infused with luxury, intellect, and sensual charm. Whether you're seeking a dazzling date for a black-tie event, an engaging presence for a private dinner, or an evening of deep connection, Nikki offers something rare: the perfect blend of class, confidence, and captivating energy.
           </p>
-          <p className="mt-6 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
+           <p className="mt-4 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
             Nikki stands out for her unparalleled elegance, captivating beauty, and engaging personality. She combines sophistication with warmth, making every encounter feel personal and unforgettable. Whether you're seeking a charming companion for a special event or an intimate, discreet escort, Nikki's professionalism and attention to detail ensure a luxurious experience tailored just for you.
           </p>
         
@@ -213,7 +212,7 @@ export default function HomePage() {
             When you choose Nikki, you are choosing an elite escort experience that is second to none. Looking for a private, intimate experience? Nikki delivers a range of luxury escort services that ensure every moment with her is unforgettable. Her services are designed to suit your preferences and schedule.
           </p>
           <p className="mt-4 text-lg text-muted-foreground">
-            For more information, check out <Link href="/services" className="text-primary hover:underline">my rates and services page</Link>.
+            For more information, check out my <Link href="/rates" className="text-primary hover:underline">rates</Link> and <Link href="/services" className="text-primary hover:underline">services</Link> pages.
           </p>
         </div>
       </section>
@@ -222,7 +221,7 @@ export default function HomePage() {
       <section className="py-16 md:py-24 bg-muted">
         <div className="container mx-auto max-w-5xl px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <Heart className="mx-auto h-12 w-12 text-primary mb-6" />
+            <KeyRound className="mx-auto h-12 w-12 text-primary mb-6" /> {/* Changed icon for variety */}
             <h2 className="text-3xl font-bold text-foreground tracking-tight">My Values</h2>
           </div>
           <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">

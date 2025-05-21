@@ -1,14 +1,18 @@
 
 import Link from 'next/link';
-import { Sparkles } from 'lucide-react'; // Or any other suitable icon
+import Image from 'next/image';
 
 export function SiteLogo() {
   return (
-    <Link href="/" className="flex items-center space-x-2 group">
-      <Sparkles className="h-8 w-8 text-primary group-hover:text-accent transition-colors duration-300" />
-      <span className="text-2xl font-bold font-heading text-foreground group-hover:text-accent transition-colors duration-300">
-        Nikki By Night
-      </span>
+    <Link href="/" className="flex items-center group" aria-label="Nikki By Night Home">
+      <Image
+        src="/images/nikki-by-night-logo.png"
+        alt="Nikki By Night Logo"
+        width={130} // Adjusted for better visibility, original aspect ratio ~3.05 (1080/354)
+        height={43}  // 130 / 3.05 = ~42.6
+        className="group-hover:opacity-90 transition-opacity duration-300"
+        priority // Important for LCP if the logo is visible above the fold
+      />
     </Link>
   );
 }

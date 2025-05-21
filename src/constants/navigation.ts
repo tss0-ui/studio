@@ -9,7 +9,7 @@ export const navigationLinks: NavItem[] = [
   { label: 'Rates', href: '/rates' },
   { label: 'Services', href: '/services' },
   { label: 'Gallery', href: '/gallery' },
-  { label: 'Policy', href: '/policy' },
   { label: 'Contact', href: '/contact' },
+  { label: 'Policy', href: '/policy' },
   { label: 'Book Now!', href: '/booking' },
 ];

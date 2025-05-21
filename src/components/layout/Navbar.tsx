@@ -20,22 +20,39 @@ export function Navbar() {
     setIsMounted(true);
   }, []);
 
-
   const NavLinks = ({ inSheet = false }: { inSheet?: boolean }) => (
-    navigationLinks.map((item: NavItem) => (
-      <Link
-        key={item.label}
-        href={item.href}
-        onClick={() => inSheet && setIsSheetOpen(false)}
-        className={cn(
-          "text-sm font-medium transition-colors hover:text-primary",
-          pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground",
-          inSheet && "block py-2 text-lg"
-        )}
-      >
-        {item.label}
-      </Link>
-    ))
+    navigationLinks.map((item: NavItem) => {
+      if (item.label === 'Book Now!') {
+        return (
+          <Button 
+            key={item.label} 
+            asChild 
+            size={inSheet ? "lg" : "default"} 
+            className={cn(
+              inSheet ? "w-full mt-4" : "ml-4 shadow-md hover:shadow-primary/50 transition-shadow",
+            )}
+          >
+            <Link href={item.href} onClick={() => inSheet && setIsSheetOpen(false)}>
+              {item.label}
+            </Link>
+          </Button>
+        );
+      }
+      return (
+        <Link
+          key={item.label}
+          href={item.href}
+          onClick={() => inSheet && setIsSheetOpen(false)}
+          className={cn(
+            "text-sm font-medium transition-colors hover:text-primary",
+            pathname === item.href ? "text-primary font-semibold" : "text-muted-foreground",
+            inSheet && "block py-2 text-lg"
+          )}
+        >
+          {item.label}
+        </Link>
+      );
+    })
   );
 
   if (!isMounted) {
@@ -44,6 +61,12 @@ export function Navbar() {
         <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <SiteLogo />
           <div className="h-6 w-6 animate-pulse rounded-full bg-muted-foreground/20 md:hidden"></div>
+          <div className="hidden md:flex items-center space-x-6">
+             <div className="h-6 w-12 animate-pulse rounded-md bg-muted-foreground/20"></div>
+             <div className="h-6 w-12 animate-pulse rounded-md bg-muted-foreground/20"></div>
+             <div className="h-6 w-12 animate-pulse rounded-md bg-muted-foreground/20"></div>
+             <div className="h-9 w-24 animate-pulse rounded-md bg-primary/20 ml-4"></div>
+          </div>
         </div>
       </header>
     );
@@ -53,7 +76,7 @@ export function Navbar() {
     <header className="sticky top-0 z-50 w-full border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
       <div className="container mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
         <SiteLogo />
-        <nav className="hidden items-center space-x-6 md:flex">
+        <nav className="hidden items-center md:flex">
           <NavLinks />
         </nav>
         <div className="md:hidden">
@@ -64,18 +87,18 @@ export function Navbar() {
                 <span className="sr-only">Open menu</span>
               </Button>
             </SheetTrigger>
-            <SheetContent side="right" className="w-full max-w-xs bg-background p-6">
-              <SheetHeader>
+            <SheetContent side="right" className="w-full max-w-xs bg-background p-6 flex flex-col">
+               <SheetHeader className="mb-8">
+                <div className="flex justify-between items-center">
+                  <SiteLogo />
+                  <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)} className="md:hidden -mr-2">
+                      <X className="h-6 w-6" />
+                      <span className="sr-only">Close menu</span>
+                    </Button>
+                </div>
                 <SheetTitle className="sr-only">Main Menu</SheetTitle>
               </SheetHeader>
-              <div className="mb-8 flex justify-between items-center">
-                <SiteLogo />
-                 <Button variant="ghost" size="icon" onClick={() => setIsSheetOpen(false)} className="md:hidden">
-                    <X className="h-6 w-6" />
-                    <span className="sr-only">Close menu</span>
-                  </Button>
-              </div>
-              <nav className="flex flex-col space-y-4">
+              <nav className="flex flex-col space-y-4 flex-grow">
                 <NavLinks inSheet={true} />
               </nav>
             </SheetContent>

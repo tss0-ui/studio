@@ -1521,6 +1521,10 @@ main {
   padding: 1px;
 }
 
+.p-8 {
+  padding: 2rem;
+}
+
 .px-1 {
   padding-left: .25rem;
   padding-right: .25rem;
@@ -1906,6 +1910,11 @@ main {
   --tw-shadow: 0 20px 25px -5px #0000001a, 0 10px 10px -5px #0000000a;
   --tw-shadow-colored: 0 20px 25px -5px var(--tw-shadow-color), 0 10px 10px -5px var(--tw-shadow-color);
   box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
+}
+
+.shadow-black\/50 {
+  --tw-shadow-color: #00000080;
+  --tw-shadow: var(--tw-shadow-colored);
 }
 
 .outline-none {
@@ -3013,6 +3022,10 @@ main {
     padding: 1rem;
   }
 
+  .md\:p-16 {
+    padding: 4rem;
+  }
+
   .md\:py-24 {
     padding-top: 6rem;
     padding-bottom: 6rem;
@@ -3036,6 +3049,11 @@ main {
   .md\:text-base {
     font-size: 1rem;
     line-height: 1.5rem;
+  }
+
+  .md\:text-xl {
+    font-size: 1.25rem;
+    line-height: 1.75rem;
   }
 
   .md\:opacity-0 {

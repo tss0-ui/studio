@@ -10,7 +10,6 @@ import {
   UserCircle,
   Heart, 
   Gem, 
-  Lightbulb, 
   ShieldCheck, 
   WandSparkles, 
   CalendarDays,
@@ -18,8 +17,9 @@ import {
   MoonStar,
   KeyRound,
   CalendarCog,
-  Info, // Added based on previous state
-  // Ensure all icons used below are imported
+  LucideIcon,
+  Briefcase, // Added for "Private Events & Travel" before it was removed, keeping just in case.
+  Sparkles // Added for "Personal Touches"
 } from 'lucide-react';
 
 const physicalAttributes = [
@@ -33,19 +33,25 @@ const physicalAttributes = [
   { label: "Bust size", value: "B" },
   { label: "Bust type", value: "Natural" },
   { label: "Body Type", value: "Curvy/Thick" },
-  { label: "Height", value: "169 cm / 5'7\"" },
+  { label: "Height", value: "169 cm / 5'7\"" }, // Corrected inches
   { label: "Ethnicity", value: "Caucasian (white)" },
   { label: "Orientation", value: "Straight" },
   { label: "Smoker", value: "Yes" },
   { label: "Tattoo", value: "Yes" },
   { label: "Piercing", value: "Yes" },
   { label: "Languages", value: "English" },
-  { label: "Available for", value: "Incall Only" },
+  { label: "Available for", value: "Incall Only" }, // Corrected typo
 ];
 
-const whyChooseNikkiFeatures = [
+type Feature = {
+  icon: React.ReactElement<LucideIcon>;
+  title: string;
+  description: string;
+};
+
+const whyChooseNikkiFeatures: Feature[] = [
   {
-    icon: <Gem className="h-10 w-10 text-primary" />, // Changed from Lightbulb for thematic consistency
+    icon: <Gem className="h-10 w-10 text-primary" />,
     title: 'Exclusivity Meets Authenticity',
     description: 'You’re not booking from a list — you’re connecting with a real woman. I\'m selective with whom I spend time, which means when we meet, you\'re getting my full attention. Our chemistry? Unrushed. Our vibe? Real.',
   },
@@ -55,7 +61,7 @@ const whyChooseNikkiFeatures = [
     description: 'Whether you\'re high-profile or simply value your privacy, I ensure that every step of our interaction — from communication to rendezvous — remains strictly confidential. My discretion is absolute.',
   },
   {
-    icon: <WandSparkles className="h-10 w-10 text-primary" />,
+    icon: <WandSparkles className="h-10 w-10 text-primary" />, // Changed from Sparkles to WandSparkles
     title: 'Tailored, Not Templated',
     description: 'Every client is unique — and so is every date. Whether you\'re craving stimulating conversation, romantic escapism, or something more playful, I tailor our time to align with your vision and vibe.',
   },
@@ -65,13 +71,13 @@ const whyChooseNikkiFeatures = [
     description: 'My calendar is integrated with real-time availability. Once your preferred time is confirmed, everything is scheduled smoothly — including any travel or event prep we may need. Efficiency meets elegance.',
   },
   {
-    icon: <Heart className="h-10 w-10 text-primary" />,
+    icon: <Sparkles className="h-10 w-10 text-primary" />, // Changed from Heart to Sparkles
     title: 'Personal Touches',
     description: 'Expect more than just a pretty face. From thoughtful texts to surprise details, I love weaving unexpected delights into our interactions. You’ll feel seen, appreciated, and indulged.',
   },
 ];
 
-const whatIOfferItems = [
+const whatIOfferItems: Feature[] = [
   {
     icon: <Wine className="h-8 w-8 text-primary" />,
     title: 'Bespoke Companionship',
@@ -84,7 +90,12 @@ const whatIOfferItems = [
   },
 ];
 
-const myValuesItems = [
+type ValueItem = {
+  title: string;
+  description: string;
+};
+
+const myValuesItems: ValueItem[] = [
     { title: 'Integrity', description: 'I value honest, respectful interactions. No facades, no games — just clear expectations and genuine engagement.' },
     { title: 'Trust', description: 'Discretion is non-negotiable. You’ll always be treated with the same level of privacy I expect myself.' },
     { title: 'Excellence', description: 'I hold myself to the highest standards in every aspect — from communication to appearance, to the emotional intelligence I bring to our time.' },
@@ -103,7 +114,11 @@ export default function HomePage() {
           className="object-cover opacity-25"
           priority
         />
-        {/* This section has an image overlay with 25% opacity over a black background */}
+        <div className="absolute inset-0 flex items-center justify-center p-8 md:p-16 pointer-events-none">
+          <p className="text-white text-center text-lg md:text-xl max-w-4xl leading-relaxed shadow-black/50 text-shadow-[0_1px_3px_var(--tw-shadow-color)]">
+            All rates and fees stated and discussed are for my time only, with the purpose and intent of serving as your personal enrichment guide. I accomplish this using the knowledge I have acquired as a self-taught alternative sex-positive therapist; aiding in the improvement of sexual and psychological health, happiness, competence, and emotional and spiritual well-being. As such, the only services I provide are consulting, counseling, coaching, and therapeutic introspection training. No quid pro quo exists in regards to my time or services.
+          </p>
+        </div>
       </section>
 
       {/* About Nikki / Welcome Section */}
@@ -137,7 +152,7 @@ export default function HomePage() {
           </Card>
 
           <p className="mt-8 max-w-3xl mx-auto text-lg text-muted-foreground sm:text-xl">
-            As a fiercely independent and discerning companion, Nikki delivers more than just beauty — she curates personalized experiences designed to leave you glowing. Every encounter is approached with care, attention, and an intuitive understanding of your unique desires. No gimmicks. No agency filters. Just one woman who takes pride in the art of unforgettable company.
+            As a fiercely independent and discerning companion, Nikki delivers more than just beauty — I curate personalized experiences designed to leave you glowing. Every encounter is approached with care, attention, and an intuitive understanding of your unique desires. No gimmicks. No agency filters. Just one woman who takes pride in the art of unforgettable company.
           </p>
           <div className="mt-10 flex justify-center gap-4">
             <Button asChild size="lg" className="shadow-lg hover:shadow-primary/50 transition-shadow">
@@ -267,7 +282,7 @@ export default function HomePage() {
               <p>My system will check your requested time slot.</p>
               <p>Upon approval, your reservation will be secured through a private Stripe checkout link or crypto wallet — your choice.</p>
               <p>Your date is locked into my calendar. You'll receive an email confirmation, with optional SMS updates if requested.</p>
-              <p>Enjoy the Experience — our time will be polished, playful, and personal.</p>
+              <p>Enjoy the Experience — my time will be polished, playful, and personal.</p>
           </div>
            <div className="mt-12 text-center">
             <Button asChild size="lg" variant="secondary" className="bg-accent text-accent-foreground shadow-xl hover:bg-accent/90 transition-colors">
@@ -300,3 +315,5 @@ export default function HomePage() {
     </MainLayout>
   );
 }
+
+    

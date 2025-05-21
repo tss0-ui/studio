@@ -95,7 +95,7 @@ export default function HomePage() {
     <MainLayout>
       {/* Hero Section */}
       <section className="relative w-[1425px] h-[755px] bg-black mx-auto">
-        <div className="absolute inset-0 opacity-65">
+        <div className="absolute inset-0 opacity-25">
           <Image
             src="/images/hero-overlay-image.jpg" 
             alt="Nikki relaxing on a couch"
@@ -300,11 +300,3 @@ export default function HomePage() {
     </MainLayout>
   );
 }
-
-    
-
-    
-
-    
-
-    

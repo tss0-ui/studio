@@ -1815,6 +1815,10 @@ main {
   opacity: .65;
 }
 
+.opacity-25 {
+  opacity: .25;
+}
+
 .mix-blend-multiply {
   mix-blend-mode: multiply;
 }
